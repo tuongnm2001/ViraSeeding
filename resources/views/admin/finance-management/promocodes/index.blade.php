@@ -33,9 +33,9 @@
 				</div>
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
-					<table id='promocodesAdminTable' class='table' width='100%'>
+					<table id='promocodesAdminTable' class="table align-middle table-row-dashed fs-6 gy-5">
 							<thead>
-								<tr>
+								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
 									<th width="10%">{{ __('Promo Name') }}</th>
 									<th width="10%">{{ __('Promocode') }}</th>
 									<th width="10%">{{ __('Status') }}</th>

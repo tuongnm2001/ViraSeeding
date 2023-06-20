@@ -32,9 +32,9 @@
 				</div>
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
-					<table id='subscriptionsAdminTable' class='table' width='100%'>
+					<table id='subscriptionsAdminTable' class="table align-middle table-row-dashed fs-6 gy-5">
 							<thead>
-								<tr>
+								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0"> 
 									<th width="10%">{{ __('Plan Type') }}</th>
 									<th width="10%">{{ __('Plan Name') }}</th>
 									<th width="7%">{{ __('Price') }}</th>

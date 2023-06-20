@@ -68,9 +68,10 @@
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">									
-										<div>								
+										<div class="fv-row w-100 flex-md-root">								
 											<h6>Time Zone</h6>
-											<select name="country" aria-label="Select a Country"  data-control="select2" data-placeholder="Select a country..." class="form-select form-select-solid form-select-lg fw-semibold ">												
+											<select 
+												class="form-select form-select-solid form-select-lg fw-semibold " name="country" aria-label="Select a Country"  data-control="select2" data-placeholder="Select a country...">												
 												<option value="Pacific/Midway" @if (config('app.timezone') == 'Pacific/Midway') selected @endif>(UTC-11:00) Midway</option>
 												<option value="Pacific/Niue" @if (config('app.timezone') == 'Pacific/Niue') selected @endif>(UTC-11:00) Niue</option>
 												<option value="Pacific/Pago_Pago" @if (config('app.timezone') == 'Pacific/Pago_Pago') selected @endif>(UTC-11:00) Pago Pago</option>

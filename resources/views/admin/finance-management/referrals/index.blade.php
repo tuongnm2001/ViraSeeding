@@ -77,11 +77,11 @@
 							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
 									<h6 class="fs-12 font-weight-bold mb-4">{{ __('User Referral System') }}</h6>
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-referral" class="custom-switch-input" @if (config('payment.referral.enabled')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Enable</span>
-									</label>
+									<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" id="" name="enable-referral" class="form-check-input w-40px h-25px" @if (config('payment.referral.enabled')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description" style="margin-left: 50px">Enable</span>
+									</div>
 								</div>
 							</div>							
 						</div>
@@ -93,26 +93,24 @@
 								<div class="row">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-registration" class="custom-switch-input" @if (config('payment.referral.registration.enabled')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Enable</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-registration" class="form-check-input w-40px h-25px" @if (config('payment.referral.registration.enabled')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Enable</span>
+											</div>
 										</div>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-12 col-md-12 col-sm-12">								
-										<div class="input-box">								
 											<h6>{{ __('Allocate TTS Gift Credits') }} <span class="text-muted">({{ __('Only for Email Verified New Users') }})</span></h6>
 											<div class="form-group">							    
-												<input type="number" class="form-control @error('credits') is-danger @enderror" id="credits" name="credits" value="{{ config('payment.referral.registration.credits') }}">
+												<input type="number" class="form-control form-control-lg form-control-solid @error('credits') is-danger @enderror" id="credits" name="credits" value="{{ config('payment.referral.registration.credits') }}">
 											</div> 
 											@error('credits')
 												<p class="text-danger">{{ $errors->first('credits') }}</p>
 											@enderror
-										</div> 
 									</div>
 								</div>
 	
@@ -127,11 +125,11 @@
 								<div class="row">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-payment" class="custom-switch-input" @if (config('payment.referral.payment.enabled')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Enable</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-payment" class="form-check-input w-40px h-25px" @if (config('payment.referral.payment.enabled')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Enable</span>
+											</div>
 										</div>
 									</div>							
 								</div>
@@ -140,7 +138,7 @@
 									<div class="col-lg-12 col-md-12 col-sm-12">			
 										<div class="input-box">	
 											<h6>{{ __('Referral Policy') }}</h6>
-											  <select id="payment-option" name="policy" data-placeholder="Choose Referral Policy:">			
+											  <select class="form-select form-select-solid form-select-lg fw-semibold" name="policy" data-placeholder="Choose Referral Policy:">			
 												<option value="first" @if (config('payment.referral.payment.policy')  == 'first') selected @endif>Only the First Purchase</option>
 												<option value="all" @if (config('payment.referral.payment.policy')  == 'all') selected @endif>All Purchases</option>
 											</select>
@@ -149,11 +147,9 @@
 
 									<div class="col-lg-12 col-md-12 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>{{ __('Commission Rate (%)') }}</h6> 
 											<div class="form-group">							    
-												<input type="number" class="form-control @error('commission') is-danger @enderror" id="commission" name="commission" value="{{ config('payment.referral.payment.commission') }}">
-											</div> 
+												<input type="number" class="form-control form-control-lg form-control-solid @error('commission') is-danger @enderror" id="commission" name="commission" value="{{ config('payment.referral.payment.commission') }}">
 											@error('commission')
 												<p class="text-danger">{{ $errors->first('commission') }}</p>
 											@enderror
@@ -162,17 +158,15 @@
 
 									<div class="col-lg-12 col-md-12 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>{{ __('Minimum Payout Threshold') }} ({{ config('payment.default_currency') }})</h6> 
 											<div class="form-group">							    
-												<input type="number" class="form-control @error('threshold') is-danger @enderror" id="threshold" name="threshold" value="{{ config('payment.referral.payment.threshold') }}">
-											</div> 
+												<input type="number" class="form-control form-control-lg form-control-solid @error('threshold') is-danger @enderror" id="threshold" name="threshold" value="{{ config('payment.referral.payment.threshold') }}">
 											@error('threshold')
 												<p class="text-danger">{{ $errors->first('threshold') }}</p>
 											@enderror
 										</div> <!-- END SECRET ACCESS KEY -->
 									</div>
-									
+
 								</div>
 	
 							</div>
@@ -182,19 +176,19 @@
 
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">								
-								<div class="input-box">								
+								<div class="form-floating">								
 									<h6>{{ __('Enter Referral Action Phrase') }}</h6>
-									<textarea class="form-control" name="referral_headline" id="referral_headline" rows="2">{{ $referral['referral_headline'] }}</textarea> 
-									@error('referral_headline')
-										<p class="text-danger">{{ $errors->first('referral_headline') }}</p>
-									@enderror
+									<textarea class="form-control" name="referral_headline" id="referral_headline" rows="2" style="height: 100px">{{ $referral['referral_headline'] }}</textarea> 
+										@error('referral_headline')
+											<p class="text-danger">{{ $errors->first('referral_headline') }}</p>
+										@enderror
 								</div>
 							</div>
 
-							<div class="col-lg-12 col-md-12 col-sm-12">								
-								<div class="input-box">								
+							<div class="col-lg-12 col-md-12 col-sm-12 my-3">								
+								<div class="form-floating">								
 									<h6>{{ __('Enter Step by Step Referral Guidelines') }}</h6>
-									<textarea class="form-control" name="referral_guideline" id="referral_guideline" rows="7">{{ $referral['referral_guideline'] }}</textarea> 
+									<textarea class="form-control" name="referral_guideline" id="referral_guideline" rows="7" style="height: 150px">{{ $referral['referral_guideline'] }}</textarea> 
 									@error('referral_guideline')
 										<p class="text-danger">{{ $errors->first('referral_guideline') }}</p>
 									@enderror
@@ -237,9 +231,9 @@
 				</div>
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
-					<table id='paymentsReferralTable' class='table' width='100%'>
+					<table id='paymentsReferralTable' class="table align-middle table-row-dashed fs-6 gy-5">
 						<thead>
-							<tr>
+							<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
 								<th width="10%" class="fs-10">{{ __('Purchase Date') }}</th>
 								<th width="12%" class="fs-10">{{ __('Order ID') }}</th>									
 								<th width="10%" class="fs-10">{{ __('Referrer') }}</th>								

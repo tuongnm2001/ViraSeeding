@@ -36,7 +36,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12 mt-2">
 								<div class="input-box">	
 									<h6>{{ __('Login via Social Media') }} <span class="text-muted">(OAuth)</span></h6>
-			  						<select id="login-oauth" name="login-oauth" data-placeholder="Login via Social Media:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="login-oauth" data-placeholder="Login via Social Media:">			
 										<option value="enabled" @if ( config('settings.oauth_login')  == 'enabled') selected @endif>Enabled</option>
 										<option value="disabled" @if ( config('settings.oauth_login')  == 'disabled') selected @endif>Disabled</option>
 									</select>
@@ -51,51 +51,47 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><i class="fs-13 mr-2 fa fa-facebook-square"></i>Facebook</h6>
 								
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-facebook" class="custom-switch-input" @if ( config('services.facebook.enable')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Allow Facebook Login</span>
+									<label class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" name="enable-facebook" class="form-check-input w-40px h-25px" @if ( config('services.facebook.enable')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description" style="margin-left: 50px">Allow Facebook Login</span>
 									</label>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Facebook API Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('facebook-key') is-danger @enderror" id="facebook-key" name="facebook-key" value="{{ config('services.facebook.client_id') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('facebook-key') is-danger @enderror" id="facebook-key" name="facebook-key" value="{{ config('services.facebook.client_id') }}" autocomplete="off">
 												@error('facebook-key')
 													<p class="text-danger">{{ $errors->first('facebook-key') }}</p>
 												@enderror
 											</div> 
-										</div> <!-- END ACCESS KEY -->
+										 <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Facebook API Secret Key</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('facebook-secret-key') is-danger @enderror" id="facebook-secret-key" name="facebook-secret-key" value="{{ config('services.facebook.client_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('facebook-secret-key') is-danger @enderror" id="facebook-secret-key" name="facebook-secret-key" value="{{ config('services.facebook.client_secret') }}" autocomplete="off">
 												@error('facebook-secret-key')
 													<p class="text-danger">{{ $errors->first('facebook-secret-key') }}</p>
 												@enderror
 											</div> 
-										</div> <!-- END SECRET ACCESS KEY -->
+										 <!-- END SECRET ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Fabook Redirect URL</small></h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('facebook-redirect') is-danger @enderror" id="facebook-redirect" name="facebook-redirect" value="{{ config('services.facebook.redirect') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('facebook-redirect') is-danger @enderror" id="facebook-redirect" name="facebook-redirect" value="{{ config('services.facebook.redirect') }}" autocomplete="off">
 												@error('facebook-redirect')
 													<p class="text-danger">{{ $errors->first('facebook-redirect') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END ACCESS KEY -->
+											</div> <!-- END ACCESS KEY -->
 									</div>
 
 								</div>
@@ -110,50 +106,45 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><i class="fs-13 mr-2 fa fa-twitter-square"></i>Twitter</h6>
 
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-twitter" class="custom-switch-input" @if ( config('services.twitter.enable')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Allow Twitter Login</span>
+									<label class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" name="enable-twitter" class="form-check-input w-40px h-25px" @if ( config('services.twitter.enable')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description"style="margin-left: 50px">Allow Twitter Login</span>
 									</label>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Twitter API Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('twitter-key') is-danger @enderror" id="twitter-key" name="twitter-key" value="{{ config('services.twitter.client_id') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('twitter-key') is-danger @enderror" id="twitter-key" name="twitter-key" value="{{ config('services.twitter.client_id') }}" autocomplete="off">
 												@error('twitter-key')
 													<p class="text-danger">{{ $errors->first('twitter-key') }}</p>
 												@enderror
 											</div> 
-										</div> <!-- END ACCESS KEY -->
+										 <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Twitter API Secret Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('twitter-secret-key') is-danger @enderror" id="twitter-secret-key" name="twitter-secret-key" value="{{ config('services.twitter.client_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('twitter-secret-key') is-danger @enderror" id="twitter-secret-key" name="twitter-secret-key" value="{{ config('services.twitter.client_secret') }}" autocomplete="off">
 												@error('twitter-secret-key')
 													<p class="text-danger">{{ $errors->first('twitter-secret-key') }}</p>
-												@enderror
-											</div> 
+												@enderror											
 										</div> <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">								
-										<!-- ACCESS KEY -->
-										<div class="input-box">								
+										<!-- ACCESS KEY -->							
 											<h6>Twitter Redirect URL</small></h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('twitter-redirect') is-danger @enderror" id="twitter-redirect" name="twitter-redirect" value="{{ config('services.twitter.redirect') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('twitter-redirect') is-danger @enderror" id="twitter-redirect" name="twitter-redirect" value="{{ config('services.twitter.redirect') }}" autocomplete="off">
 												@error('twitter-redirect')
 													<p class="text-danger">{{ $errors->first('twitter-redirect') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END ACCESS KEY -->
 									</div>
 
@@ -169,49 +160,43 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><i class="fs-13 mr-2 fa fa-google-plus-square"></i>Google</h6>
 
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-google" class="custom-switch-input" @if ( config('services.google.enable')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Allow Google Login</span>
+									<label class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" name="enable-google" class="form-check-input w-40px h-25px" @if ( config('services.google.enable')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description"style="margin-left: 50px">Allow Google Login</span>
 									</label>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Google API Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('google-key') is-danger @enderror" id="google-key" name="google-key" value="{{ config('services.google.client_id') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('google-key') is-danger @enderror" id="google-key" name="google-key" value="{{ config('services.google.client_id') }}" autocomplete="off">
 												@error('google-key')
 													<p class="text-danger">{{ $errors->first('google-key') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END ACCESS KEY -->
 									</div>		
 									
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Google API Secret Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('google-secret-key') is-danger @enderror" id="google-secret-key" name="google-secret-key" value="{{ config('services.google.client_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('google-secret-key') is-danger @enderror" id="google-secret-key" name="google-secret-key" value="{{ config('services.google.client_secret') }}" autocomplete="off">
 												@error('google-secret-key')
 													<p class="text-danger">{{ $errors->first('google-secret-key') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END ACCESS KEY -->
 									</div>
 									
 									<div class="col-lg-6 col-md-6 col-sm-12">								
-										<div class="input-box">								
 											<h6>Google Redirect URL</small></h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('google-redirect') is-danger @enderror" id="google-redirect" name="google-redirect" value="{{ config('services.google.redirect') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('google-redirect') is-danger @enderror" id="google-redirect" name="google-redirect" value="{{ config('services.google.redirect') }}" autocomplete="off">
 												@error('google-redirect')
 													<p class="text-danger">{{ $errors->first('google-redirect') }}</p>
 												@enderror
-											</div> 
 										</div> 
 									</div>
 								</div>
@@ -226,49 +211,43 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><i class="fs-13 mr-2 fa fa-linkedin-square"></i>LinkedIn</h6>
 
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-linkedin" class="custom-switch-input" @if ( config('services.linkedin.enable')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Allow LinkedIn Login</span>
+									<label class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" name="enable-linkedin" class="form-check-input w-40px h-25px" @if ( config('services.linkedin.enable')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description"style="margin-left: 50px">Allow LinkedIn Login</span>
 									</label>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>LinkedIn API Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('linkedin-key') is-danger @enderror" id="linkedin-key" name="linkedin-key" value="{{ config('services.linkedin.client_id') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('linkedin-key') is-danger @enderror" id="linkedin-key" name="linkedin-key" value="{{ config('services.linkedin.client_id') }}" autocomplete="off">
 												@error('linkedin-key')
 													<p class="text-danger">{{ $errors->first('linkedin-key') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>LinkedIn Secret Key</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('linkedin-secret-key') is-danger @enderror" id="linkedin-secret-key" name="linkedin-secret-key" value="{{ config('services.linkedin.client_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('linkedin-secret-key') is-danger @enderror" id="linkedin-secret-key" name="linkedin-secret-key" value="{{ config('services.linkedin.client_secret') }}" autocomplete="off">
 												@error('linkedin-secret-key')
 													<p class="text-danger">{{ $errors->first('linkedin-secret-key') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END SECRET ACCESS KEY -->
 									</div>
 									
 									<div class="col-lg-6 col-md-6 col-sm-12">								
-										<div class="input-box">								
 											<h6>LinkedIn Redirect URL</small></h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('linkedin-redirect') is-danger @enderror" id="linkedin-redirect" name="linkedin-redirect" value="{{ config('services.linkedin.redirect') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('linkedin-redirect') is-danger @enderror" id="linkedin-redirect" name="linkedin-redirect" value="{{ config('services.linkedin.redirect') }}" autocomplete="off">
 												@error('linkedin-redirect')
 													<p class="text-danger">{{ $errors->first('linkedin-redirect') }}</p>
 												@enderror
-											</div> 
 										</div> 
 									</div>
 								</div>

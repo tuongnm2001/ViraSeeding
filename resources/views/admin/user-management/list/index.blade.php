@@ -36,9 +36,9 @@
 					<div class="box-content">
 						
 						<!-- DATATABLE -->
-						<table id='listUsersTable' class='table listUsersTable' width='100%'>
+						<table id='listUsersTable' class="table align-middle table-row-dashed fs-6 gy-5">
 								<thead>
-									<tr>		
+									<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">		
 										<th width="10%">{{ __('Registation Date') }}</th> 	
 										<th width="5%">{{ __('Avatar') }}</th> 	
 										<th width="10%">{{ __('Full Name') }}</th> 								

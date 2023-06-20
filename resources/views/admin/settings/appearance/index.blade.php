@@ -33,7 +33,6 @@
 
 						<div class="row">
 							<div class="col-md-6 col-sm-12">									
-								<div class="input-box">								
 									<h6>Title</h6>
 									<div class="form-group">							    
 										<input type="text" class="form-control form-control-solid @error('title') is-danger @enderror" id="title" name="title" value="{{ $information['title'] }}" autocomplete="off">
@@ -41,11 +40,9 @@
 											<p class="text-danger">{{ $errors->first('title') }}</p>
 										@enderror
 									</div> 
-								</div> 
 							</div>	
 
 							<div class="col-md-6 col-sm-12">									
-								<div class="input-box">								
 									<h6>Author</h6>
 									<div class="form-group">							    
 										<input type="text" class="form-control form-control-solid @error('author') is-danger @enderror" id="author" name="author" value="{{ $information['author'] }}" autocomplete="off">
@@ -53,11 +50,9 @@
 											<p class="text-danger">{{ $errors->first('author') }}</p>
 										@enderror
 									</div> 
-								</div> 
 							</div>
 
 							<div class="col-md-12 col-sm-12">									
-								<div class="input-box">								
 									<h6>Keywords</h6>
 									<div class="form-group">							    
 										<input type="text" class="form-control form-control-solid @error('keywords') is-danger @enderror" id="keywords" name="keywords" value="{{ $information['keywords'] }}" autocomplete="off">
@@ -65,11 +60,9 @@
 											<p class="text-danger">{{ $errors->first('keywords') }}</p>
 										@enderror
 									</div> 
-								</div> 
 							</div>
 							
 							<div class="col-md-12 col-sm-12">									
-								<div class="input-box">								
 									<h6>Description</h6>
 									<div class="form-group">							    
 										<input type="text" class="form-control form-control-solid @error('description') is-danger @enderror" id="description" name="description" value="{{ $information['description'] }}" autocomplete="off">
@@ -77,7 +70,6 @@
 											<p class="text-danger">{{ $errors->first('description') }}</p>
 										@enderror
 									</div> 
-								</div> 
 							</div>							
 						
 						</div>
@@ -100,9 +92,11 @@
 											<label class="form-label fs-12">{{ __('Select Logo') }} <span class="text-muted"></span></label>
 											<div class="input-group file-browser">									
 												<input type="text" class="form-control border-right-0 browse-file form-control-solid" placeholder="240px by 70px PNG image" readonly>
-												<button type="button" class="btn btn-primary special-btn">
-													Browse1 <input type="file" name="main_logo" style="display: none;">
-												</button>
+												<label class="input-group-btn">
+													<span class="btn btn-success special-btn">
+														Browse1 <input type="file" name="main_logo" style="display: none;">
+													</span>
+												</label>
 											</div>
 											@error('main_logo')
 												<p class="text-danger">{{ $errors->first('main_logo') }}</p>
@@ -130,11 +124,13 @@
 									<div class="col-sm-12 col-md-6">
 										<div class="input-box">
 											<label class="form-label fs-12">{{ __('Select Logo') }} <span class="text-muted"></span></label>
-											<div class="input-group file-browser">									
+											<div class="input-group file-browser">	
 												<input type="text"  class="form-control border-right-0 browse-file form-control-solid" placeholder="68px by 68px PNG Image" readonly>
-												<button type="button"  id="formFile" for="formFile" class="btn btn-primary special-btn">
-													Browse <input type="file" name="minimized_logo" style="display: none;">
-												</button>
+												<label class="input-group-btn">							
+													<span class="btn btn-success special-btn">
+														Browse2 <input type="file" name="minimized_logo" style="display: none;">
+													</span>
+												</label>	
 											</div>
 											@error('minimized_logo')
 												<p class="text-danger">{{ $errors->first('minimized_logo') }}</p>
@@ -165,8 +161,8 @@
 											<div class="input-group file-browser">									
 												<input type="text" class="form-control border-right-0 browse-file" placeholder="32px by 32px ICO Format" readonly>
 												<label class="input-group-btn">
-													<span class="btn btn-primary special-btn">
-														Browse <input type="file" name="favicon_logo" style="display: none;">
+													<span class="btn btn-success special-btn">
+														Browse3 <input type="file" name="favicon_logo" style="display: none;">
 													</span>
 												</label>
 											</div>

@@ -200,7 +200,7 @@
                                     </span>
                                     <span class="menu-title">{{ __('Finance Management') }}</span>
                                     @if (auth()->user()->unreadNotifications->where('type', 'App\Notifications\PayoutRequestNotification')->count())
-                                        <span class="badge badge-warning">{{ auth()->user()->unreadNotifications->where('type', 'App\Notifications\PayoutRequestNotification')->count() }}</span>
+                                        <span class="badge badge-light-warning">{{ auth()->user()->unreadNotifications->where('type', 'App\Notifications\PayoutRequestNotification')->count() }}</span>
                                     @else
                                         {{-- <i class="angle fa fa-angle-right"></i> --}}
                                     @endif

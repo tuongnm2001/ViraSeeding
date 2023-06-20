@@ -37,21 +37,20 @@
 
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<!-- VOICE TYPES -->
-								<div class="input-box">	
 									<h6>{{ __('Set Voice Types') }}</h6>
-			  						<select id="set-voice-types" name="set-voice-types" data-placeholder="Select Available Voice Types:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold " name="set-voice-types" data-placeholder="Select Available Voice Types:">			
 										<option value="standard" @if ( config('tts.voice_type')  == 'standard') selected @endif>Only Standard Voices</option>
 										<option value="neural" @if ( config('tts.voice_type')  == 'neural') selected @endif>Only Neural Voices</option>
 										<option value="both" @if ( config('tts.voice_type')  == 'both') selected @endif>Both (Standard and Neural)</option>
 									</select>
-								</div> <!-- END VOICE TYPES -->							
+									 <!-- END VOICE TYPES -->							
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<!-- EFFECTS -->
 								<div class="input-box">	
 									<h6>{{ __('Set SSML Effects') }}</h6>
-			  						<select id="set-ssml-effects" name="set-ssml-effects" data-placeholder="Configure SSML Effects:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="set-ssml-effects" data-placeholder="Configure SSML Effects:">			
 										<option value="enable" @if ( config('tts.ssml_effect')  == 'enable') selected @endif>Enable All</option>
 										<option value="disable" @if ( config('tts.ssml_effect')  == 'disable') selected @endif>Disable All</option>
 									</select>
@@ -63,27 +62,24 @@
 						<div class="row">							
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<!-- MAX CHARACTERS -->
-								<div class="input-box">								
 									<h6>{{ __('Set Maximum Character Limit') }}: <span class="text-muted">({{ __('For Admin & Subscriber Groups') }})</span></h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('set-max-chars') is-danger @enderror" id="set-max-chars" name="set-max-chars" placeholder="Ex: 3000" value="{{ config('tts.max_chars_limit') }}" required>
+										<input type="text" class="form-control form-control-lg form-control-solid @error('set-max-chars') is-danger @enderror" id="set-max-chars" name="set-max-chars" placeholder="Ex: 3000" value="{{ config('tts.max_chars_limit') }}" required>
 										@error('set-max-chars')
 											<p class="text-danger">{{ $errors->first('set-max-chars') }}</p>
 										@enderror
 									</div> 
-								</div> <!-- END MAX CHARACTERS -->							
+								<!-- END MAX CHARACTERS -->							
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-12">	
 								<!-- FREE TIER DEMO LIMIT -->
-								<div class="input-box">								
 									<h6>{{ __('Set Free Tier Character Limit') }} <span class="text-muted">({{ __('Per New User') }})</span></h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('set-free-chars') is-danger @enderror" id="set-free-chars" name="set-free-chars" placeholder="Ex: 2000" value="{{ config('tts.free_chars') }}" required>
+										<input type="text" class="form-control form-control-lg form-control-solid @error('set-free-chars') is-danger @enderror" id="set-free-chars" name="set-free-chars" placeholder="Ex: 2000" value="{{ config('tts.free_chars') }}" required>
 										@error('set-free-chars')
 											<p class="text-danger">{{ $errors->first('set-free-chars') }}</p>
 										@enderror
-									</div> 
 								</div> <!-- END FREE TIER DEMO LIMIT -->							
 							</div>
 						</div>
@@ -93,7 +89,7 @@
 								<!-- STORAGE OPTION -->
 								<div class="input-box">	
 									<h6>{{ __('Set Default Storage Option') }}</h6>
-			  						<select id="set-storage-option" name="set-storage-option" data-placeholder="Select Default Main Storage:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="set-storage-option" data-placeholder="Select Default Main Storage:">			
 										<option value="local" @if ( config('tts.default_storage')  == 'local') selected @endif>Local Server Storage</option>
 										<option value="s3" @if ( config('tts.default_storage')  == 's3') selected @endif>Amazon S3 Bucket</option>
 										<option value="wasabi" @if ( config('tts.default_storage')  == 'wasabi') selected @endif>Wasabi Bucket</option>
@@ -105,7 +101,7 @@
 								<!-- STORAGE OPTION -->
 								<div class="input-box">	
 									<h6>{{ __('Auto Clean Local Stored Files') }}</h6>
-			  						<select id="set-storage-clean" name="set-storage-clean" data-placeholder="Set Default Local Storage Clean Up Duration:">	
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="set-storage-clean" data-placeholder="Set Default Local Storage Clean Up Duration:">	
 										<option value="never" @if ( config('tts.clean_storage')  == 'never') selected @endif>Never Delete</option>		
 										<option value="1" @if ( config('tts.clean_storage')  == '1') selected @endif>Delete Files 1 Day Old</option>
 										<option value="7" @if ( config('tts.clean_storage')  == '7') selected @endif>Delete Files 1 Week Old</option>
@@ -125,7 +121,7 @@
 								<div class="input-box">								
 									<h6>{{ __('Neural Voices for Free Tier Users') }}</h6>
 									<div class="form-group">							    
-										<select id="free-tier-neural" name="free-tier-neural" data-placeholder="Allow Neural Voices for Free Tier Users">			
+										<select class="form-select form-select-solid form-select-lg fw-semibold" name="free-tier-neural" data-placeholder="Allow Neural Voices for Free Tier Users">			
 											<option value="enable" @if ( config('tts.user_neural')  == 'enable') selected @endif>Enable</option>
 											<option value="disable" @if ( config('tts.user_neural')  == 'disable') selected @endif>Disable</option>
 										</select>
@@ -136,7 +132,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12">							
 								<div class="input-box">	
 									<h6>{{ __('Cloud Vendor Logos') }} <span class="text-muted">({{ __('Only for User Panel and Voice Samples') }})</span></h6>
-			  						<select id="vendor-logo" name="vendor-logo" data-placeholder="Show or Hide Vendor Logos on User side:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="vendor-logo" data-placeholder="Show or Hide Vendor Logos on User side:">			
 										<option value="show" @if ( config('tts.vendor_logos')  == 'show') selected @endif>Show</option>
 										<option value="hide" @if ( config('tts.vendor_logos')  == 'hide') selected @endif>Hide</option>
 									</select>
@@ -145,15 +141,14 @@
 
 							<div class="col-lg-6 col-md-6 col-sm-12">	
 								<!-- FREE TIER CHAR LIMIT -->
-								<div class="input-box">								
-									<h6>{{ __('Set Maximum Character Limit') }} <span class="text-muted">({{ __('For User Group - Free Tier') }})</span></h6>
-									<div class="form-group">							    
-										<input type="text" class="form-control @error('free-tier-limit') is-danger @enderror" id="free-tier-limit" name="free-tier-limit" placeholder="Ex: 2000" value="{{ config('tts.free_chars_limit') }}" required>
-										@error('free-tier-limit')
-											<p class="text-danger">{{ $errors->first('free-tier-limit') }}</p>
-										@enderror
-									</div> 
-								</div> <!-- END FREE TIER CHAR LIMIT -->							
+							<h6>{{ __('Set Maximum Character Limit') }} <span class="text-muted">({{ __('For User Group - Free Tier') }})</span></h6>
+							<div class="form-group">							    
+								<input type="text" class="form-control form-control-lg form-control-solid @error('free-tier-limit') is-danger @enderror" id="free-tier-limit" name="free-tier-limit" placeholder="Ex: 2000" value="{{ config('tts.free_chars_limit') }}" required>
+								@error('free-tier-limit')
+									<p class="text-danger">{{ $errors->first('free-tier-limit') }}</p>
+								@enderror
+							</div> 
+							<!-- END FREE TIER CHAR LIMIT -->							
 							</div>
 						</div>
 
@@ -165,40 +160,35 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Wasabi Access Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-wasabi-access-key') is-danger @enderror" id="wasabi-access-key" name="set-wasabi-access-key" value="{{ config('services.wasabi.key') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-wasabi-access-key') is-danger @enderror" id="wasabi-access-key" name="set-wasabi-access-key" value="{{ config('services.wasabi.key') }}" autocomplete="off">
 												@error('set-wasabi-access-key')
 													<p class="text-danger">{{ $errors->first('set-wasabi-access-key') }}</p>
 												@enderror
 											</div> 
-										</div> <!-- END ACCESS KEY -->
+										 <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Wasabi Secret Access Key</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-wasabi-secret-access-key') is-danger @enderror" id="wasabi-secret-access-key" name="set-wasabi-secret-access-key" value="{{ config('services.wasabi.secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-wasabi-secret-access-key') is-danger @enderror" id="wasabi-secret-access-key" name="set-wasabi-secret-access-key" value="{{ config('services.wasabi.secret') }}" autocomplete="off">
 												@error('set-wasabi-secret-access-key')
 													<p class="text-danger">{{ $errors->first('set-wasabi-secret-access-key') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END SECRET ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Wasabi Bucket Name</small></h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-wasabi-bucket') is-danger @enderror" id="wasabi-bucket" name="set-wasabi-bucket" value="{{ config('services.wasabi.bucket') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-wasabi-bucket') is-danger @enderror" id="wasabi-bucket" name="set-wasabi-bucket" value="{{ config('services.wasabi.bucket') }}" autocomplete="off">
 												@error('set-wasabi-bucket')
 													<p class="text-danger">{{ $errors->first('set-wasabi-bucket') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END ACCESS KEY -->
 									</div>
 
@@ -206,7 +196,7 @@
 										<!-- WASABI REGION -->
 										<div class="input-box">	
 											<h6>Set Wasabi Region</h6>
-											  <select id="set-wasabi-region" name="set-wasabi-region" data-placeholder="Select Default Wasabi Region:">			
+											  <select class="form-select form-select-solid form-select-lg fw-semibold" name="set-wasabi-region" data-placeholder="Select Default Wasabi Region:">			
 												<option value="us-east-1" @if (config('services.wasabi.region') == 'us-east-1') selected @endif>Wasabi US East 1 (N. Virginia) us-east-1</option>
 												<option value="us-east-2" @if (config('services.wasabi.region') == 'us-east-2') selected @endif>Wasabi US East 2 (N. Virginia) us-east-2</option>
 												<option value="us-central-1" @if (config('services.wasabi.region') == 'us-central-1') selected @endif>Wasabi Central 1 (Texas) us-central-1</option>
@@ -228,58 +218,52 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><img src="{{URL::asset('img/csp/aws-sm.png')}}" class="fw-2 mr-2" alt="">Amazon Web Services</h6>
 								
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-aws" class="custom-switch-input" @if ( config('tts.enable.aws')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Use AWS</span>
-									</label>
+									<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" id="AWS" name="enable-aws" class="form-check-input w-40px h-25px" @if ( config('tts.enable.aws')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description" style="margin-left: 50px">Use AWS</span>
+									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>AWS Access Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-aws-access-key') is-danger @enderror" id="aws-access-key" name="set-aws-access-key" value="{{ config('services.aws.key') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-aws-access-key') is-danger @enderror" id="aws-access-key" name="set-aws-access-key" value="{{ config('services.aws.key') }}" autocomplete="off">
 												@error('set-aws-access-key')
 													<p class="text-danger">{{ $errors->first('set-aws-access-key') }}</p>
 												@enderror
-											</div> 
 										</div> <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>AWS Secret Access Key</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-aws-secret-access-key') is-danger @enderror" id="aws-secret-access-key" name="set-aws-secret-access-key" value="{{ config('services.aws.secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-aws-secret-access-key') is-danger @enderror" id="aws-secret-access-key" name="set-aws-secret-access-key" value="{{ config('services.aws.secret') }}" autocomplete="off">
 												@error('set-aws-secret-access-key')
 													<p class="text-danger">{{ $errors->first('set-aws-secret-access-key') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END SECRET ACCESS KEY -->
+											</div> <!-- END SECRET ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Amazon S3 Bucket Name</small></h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-aws-bucket') is-danger @enderror" id="aws-bucket" name="set-aws-bucket" value="{{ config('services.aws.bucket') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-aws-bucket') is-danger @enderror" id="aws-bucket" name="set-aws-bucket" value="{{ config('services.aws.bucket') }}" autocomplete="off">
 												@error('set-aws-bucket')
 													<p class="text-danger">{{ $errors->first('set-aws-bucket') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END ACCESS KEY -->
+											</div> <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- AWS REGION -->
 										<div class="input-box">	
 											<h6>Set AWS Region</h6>
-											  <select id="set-aws-region" name="set-aws-region" data-placeholder="Select Default AWS Region:">			
+											  <select class="form-select form-select-solid form-select-lg fw-semibold" name="set-aws-region" data-placeholder="Select Default AWS Region:">			
 												<option value="us-east-1" @if ( config('services.aws.region')  == 'us-east-1') selected @endif>US East (N. Virginia) us-east-1</option>
 												<option value="us-east-2" @if ( config('services.aws.region')  == 'us-east-2') selected @endif>US East (Ohio) us-east-2</option>
 												<option value="us-west-1" @if ( config('services.aws.region')  == 'us-west-1') selected @endif>US West (N. California) us-west-1</option>
@@ -317,32 +301,30 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><img src="{{URL::asset('img/csp/azure-sm.png')}}" class="fw-2 mr-2" alt="">Azure Settings</h6>
 
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-azure" class="custom-switch-input" @if ( config('tts.enable.azure')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Use Azure</span>
-									</label>
+									<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" id="Azure" name="enable-azure" class="form-check-input w-40px h-25px" @if ( config('tts.enable.azure')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description"style="margin-left: 50px">Use Azure</span>
+									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Azure Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('set-azure-key') is-danger @enderror" id="set-azure-key" name="set-azure-key" value="{{ config('services.azure.key') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('set-azure-key') is-danger @enderror" id="set-azure-key" name="set-azure-key" value="{{ config('services.azure.key') }}" autocomplete="off">
 												@error('set-azure-key')
 													<p class="text-danger">{{ $errors->first('set-azure-key') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END ACCESS KEY -->
+											</div> <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- AZURE REGION -->
 										<div class="input-box">	
 											<h6>Azure Region</h6>
-											  <select id="set-azure-region" name="set-azure-region" data-placeholder="Select Azure Region:">			
+											  <select class="form-select form-select-solid form-select-lg fw-semibold" name="set-azure-region" data-placeholder="Select Azure Region:">			
 												<option value="australiaeast" @if ( config('services.azure.region')  == 'australiaeast') selected @endif>Australia East (australiaeast)</option>
 												<option value="brazilsouth" @if ( config('services.azure.region')  == 'brazilsouth') selected @endif>Brazil South (brazilsouth)</option>
 												<option value="canadacentral" @if ( config('services.azure.region')  == 'canadacentral') selected @endif>Canada Central (canadacentral)</option>
@@ -380,25 +362,23 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><img src="{{URL::asset('img/csp/gcp-sm.png')}}" class="fw-2 mr-2" alt="">GCP Settings</h6>
 
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-gcp" class="custom-switch-input" @if ( config('tts.enable.gcp')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Use GCP</span>
-									</label>
+									<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" id="GCP" name="enable-gcp" class="form-check-input w-40px h-25px" @if ( config('tts.enable.gcp')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description" style="margin-left: 50px">Use GCP</span>
+									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>GCP Configuration File Path</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('gcp-configuration-path') is-danger @enderror" id="gcp-configuration-path" name="gcp-configuration-path" value="{{ config('services.gcp.key_path') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('gcp-configuration-path') is-danger @enderror" id="gcp-configuration-path" name="gcp-configuration-path" value="{{ config('services.gcp.key_path') }}" autocomplete="off">
 												@error('gcp-configuration-path')
 													<p class="text-danger">{{ $errors->first('gcp-configuration-path') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END ACCESS KEY -->
+											</div> <!-- END ACCESS KEY -->
 									</div>								
 								</div>
 	
@@ -412,38 +392,34 @@
 								<h6 class="fs-12 font-weight-bold mb-4"><img src="{{URL::asset('img/csp/ibm-sm.png')}}" class="fw-2 mr-2" alt="">IBM Settings</h6>
 
 								<div class="form-group">
-									<label class="custom-switch">
-										<input type="checkbox" name="enable-ibm" class="custom-switch-input" @if ( config('tts.enable.ibm')  == 'on') checked @endif>
-										<span class="custom-switch-indicator"></span>
-										<span class="custom-switch-description">Use IBM</span>
-									</label>
+									<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+										<input type="checkbox" name="enable-ibm" class="form-check-input w-40px h-25px" @if ( config('tts.enable.ibm')  == 'on') checked @endif>
+										{{-- <span class="custom-switch-indicator"></span> --}}
+										<span class="custom-switch-description" style="margin-left: 50px">Use IBM</span>
+									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>IBM API Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('ibm-api-key') is-danger @enderror" id="ibm-api-key" name="ibm-api-key" value="{{ config('services.ibm.api_key') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('ibm-api-key') is-danger @enderror" id="ibm-api-key" name="ibm-api-key" value="{{ config('services.ibm.api_key') }}" autocomplete="off">
 												@error('ibm-api-key')
 													<p class="text-danger">{{ $errors->first('ibm-api-key') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END ACCESS KEY -->
+											</div> <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>IBM Endpoint URL</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('ibm-endpoint-url') is-danger @enderror" id="ibm-endpoint-url" name="ibm-endpoint-url" value="{{ config('services.ibm.endpoint_url') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('ibm-endpoint-url') is-danger @enderror" id="ibm-endpoint-url" name="ibm-endpoint-url" value="{{ config('services.ibm.endpoint_url') }}" autocomplete="off">
 												@error('ibm-endpoint-url')
 													<p class="text-danger">{{ $errors->first('ibm-endpoint-url') }}</p>
 												@enderror
-											</div> 
-										</div> <!-- END SECRET ACCESS KEY -->
+											</div> <!-- END SECRET ACCESS KEY -->
 									</div>								
 								</div>
 	

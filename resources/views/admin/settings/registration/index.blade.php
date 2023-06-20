@@ -34,19 +34,17 @@
 						<div class="row">
 
 							<div class="col-12">							
-								<div class="input-box">	
 									<h6>{{ __('New User Registration') }}</h6>
-			  						<select id="registration" name="registration" data-placeholder="Select Registration Option:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="registration" data-placeholder="Select Registration Option:">			
 										<option value="enabled" @if ( config('settings.registration')  == 'enabled') selected @endif>Enabled</option>
 										<option value="disabled" @if ( config('settings.registration')  == 'disabled') selected @endif>Disabled</option>
 									</select>
-								</div> 						
 							</div>
 
 							<div class="col-12">							
 								<div class="input-box">	
 									<h6>{{ __('New User Email Verification') }}</h6>
-			  						<select id="email-verification" name="email-verification" data-placeholder="Select Email Verification Option:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="email-verification" data-placeholder="Select Email Verification Option:">			
 										<option value="enabled" @if ( config('settings.email_verification')  == 'enabled') selected @endif>Enabled</option>
 										<option value="disabled" @if ( config('settings.email_verification')  == 'disabled') selected @endif>Disabled</option>
 									</select>

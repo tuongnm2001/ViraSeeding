@@ -28,14 +28,14 @@
 					<h3 class="card-title">{{ __('User Activity Monitoring') }}</h3>
 				</div>				
 				<div class="card-body pt-0">
-					<table class="table table-hover" id="database-backup">
+					<table class="table table-hover table align-middle table-row-dashed fs-6 gy-5">
 						<thead>
-							<tr role="row">
-							<th class="fs-12 font-weight-700 border-top-0">{{ __('User Email') }}</th>
-							<th class="fs-12 font-weight-700 border-top-0">{{ __('User Group') }}</th>
-							<th class="fs-12 font-weight-700 border-top-0">{{ __('IP Address') }}</th>
-							<th class="fs-12 font-weight-700 border-top-0">{{ __('Connection') }}</th>
-							<th class="fs-12 font-weight-700 border-top-0">{{ __('Last Activity') }}</th>
+							<tr role="row" class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+								<th class="fs-12 font-weight-700 border-top-0">{{ __('User Email') }}</th>
+								<th class="fs-12 font-weight-700 border-top-0">{{ __('User Group') }}</th>
+								<th class="fs-12 font-weight-700 border-top-0">{{ __('IP Address') }}</th>
+								<th class="fs-12 font-weight-700 border-top-0">{{ __('Connection') }}</th>
+								<th class="fs-12 font-weight-700 border-top-0">{{ __('Last Activity') }}</th>
 							</tr>
 						</thead>
 						<tbody>

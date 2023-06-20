@@ -29,9 +29,9 @@
 				</div>
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
-					<table id='allSupportRequestsTable' class='table' width='100%'>
+					<table id='allSupportRequestsTable' class="table align-middle table-row-dashed fs-6 gy-5">
 							<thead>
-								<tr>
+								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
 									<th width="10%">{{ __('Priority') }}</th>
 									<th width="10%">{{ __('Created Date') }}</th>
 									<th width="10%">{{ __('Created By') }}</th>

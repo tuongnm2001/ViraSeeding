@@ -36,7 +36,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12">			
 								<div class="input-box">	
 									<h6>{{ __('Payment Options') }}</h6>
-			  						<select id="payment-option" name="payment-option" data-placeholder="Choose Payment Option:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold " name="payment-option" data-placeholder="Choose Payment Option:">			
 										<option value="prepaid" @if (config('payment.payment_option')  == 'prepaid') selected @endif>Pre-Paid Payment Option</option>
 										<option value="subscription" @if (config('payment.payment_option')  == 'subscription') selected @endif>Subscription Plan Payment Option</option>
 										<option value="both" @if (config('payment.payment_option')  == 'both') selected @endif>Both (Pre-Paid and Subscription Options)</option>
@@ -45,21 +45,19 @@
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('Tax Rate') }} (%)</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('tax') is-danger @enderror" id="tax" name="tax" placeholder="Enter Tax Rate" value="{{ config('payment.payment_tax')}}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('tax') is-danger @enderror" id="tax" name="tax" placeholder="Enter Tax Rate" value="{{ config('payment.payment_tax')}}">
 									</div>
 									@error('tax')
 										<p class="text-danger">{{ $errors->first('tax') }}</p>
 									@enderror 
-								</div>							
 							</div>		
 							
 							<div class="col-lg-6 col-md-6 col-sm-12">			
 								<div class="input-box">	
 									<h6>{{ __('Default Currency') }} <span class="text-muted">({{ __('Payments/Plans/System/Payouts') }})</span> <span class="text-danger">({{ __('Except Estimated Spendings') }})</span></h6>
-			  						<select id="currency" name="currency" data-placeholder="Choose Default Currency:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold " name="currency" data-placeholder="Choose Default Currency:">			
 										@foreach(config('currencies.all') as $key => $value)
 											<option value="{{ $key }}" @if(config('payment.default_system_currency') == $key) selected @endif>{{ $value['name'] }} - {{ $key }} ({{ $value['symbol'] }})</option>
 										@endforeach
@@ -79,83 +77,73 @@
 								<div class="row">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-paypal" class="custom-switch-input" @if (config('services.paypal.enable')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Use PayPal</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-paypal" class="form-check-input w-40px h-25px" @if (config('services.paypal.enable')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Use PayPal</span>
+											</div>
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-paypal-subscription" class="custom-switch-input" @if (config('services.paypal.subscription_enable')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Use PayPal Subscription</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-paypal-subscription" class="form-check-input w-40px h-25px" @if (config('services.paypal.subscription_enable')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description"  style="margin-left: 50px">Use PayPal Subscription</span>
+											</div>
 										</div>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
-										<div class="input-box">								
 											<h6>PayPal Client ID</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('paypal_client_id') is-danger @enderror" id="paypal_client_id" name="paypal_client_id" value="{{ config('services.paypal.client_id') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('paypal_client_id') is-danger @enderror" id="paypal_client_id" name="paypal_client_id" value="{{ config('services.paypal.client_id') }}" autocomplete="off">
 											</div> 
 											@error('paypal_client_id')
 												<p class="text-danger">{{ $errors->first('paypal_client_id') }}</p>
 											@enderror
-										</div> 
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>PayPal Client Secret</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('paypal_client_secret') is-danger @enderror" id="paypal_client_secret" name="paypal_client_secret" value="{{ config('services.paypal.client_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('paypal_client_secret') is-danger @enderror" id="paypal_client_secret" name="paypal_client_secret" value="{{ config('services.paypal.client_secret') }}" autocomplete="off">
 											</div> 
 											@error('paypal_client_secret')
 												<p class="text-danger">{{ $errors->first('paypal_client_secret') }}</p>
 											@enderror
-										</div> 
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>Paypal Webhook URI</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('paypal_webhook_uri') is-danger @enderror" id="paypal_webhook_uri" name="paypal_webhook_uri" value="{{ config('services.paypal.webhook_uri') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('paypal_webhook_uri') is-danger @enderror" id="paypal_webhook_uri" name="paypal_webhook_uri" value="{{ config('services.paypal.webhook_uri') }}" autocomplete="off">
 											</div> 
 											@error('paypal_webhook_uri')
 												<p class="text-danger">{{ $errors->first('paypal_webhook_uri') }}</p>
 											@enderror
-										</div> 
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>Paypal Webhook ID</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('paypal_webhook_id') is-danger @enderror" id="paypal_webhook_id" name="paypal_webhook_id" value="{{ config('services.paypal.webhook_id') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('paypal_webhook_id') is-danger @enderror" id="paypal_webhook_id" name="paypal_webhook_id" value="{{ config('services.paypal.webhook_id') }}" autocomplete="off">
 											</div> 
 											@error('paypal_webhook_id')
 												<p class="text-danger">{{ $errors->first('paypal_webhook_id') }}</p>
 											@enderror
-										</div> 
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>PayPal Base URI</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('paypal_base_uri') is-danger @enderror" id="paypal_base_uri" name="paypal_base_uri" value="{{ config('services.paypal.base_uri') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('paypal_base_uri') is-danger @enderror" id="paypal_base_uri" name="paypal_base_uri" value="{{ config('services.paypal.base_uri') }}" autocomplete="off">
 											</div> 
 											@error('paypal_base_uri')
 												<p class="text-danger">{{ $errors->first('paypal_base_uri') }}</p>
 											@enderror
-										</div> 
 									</div>
 								
 								</div>
@@ -172,20 +160,20 @@
 								<div class="row">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-stripe" class="custom-switch-input" @if (config('services.stripe.enable')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Use Stripe</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-stripe" class="form-check-input w-40px h-25px" @if (config('services.stripe.enable')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Use Stripe</span>
+											</div>
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-stripe-subscription" class="custom-switch-input" @if (config('services.stripe.subscription_enable')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Use Stripe Subscription</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-stripe-subscription" class="form-check-input w-40px h-25px" @if (config('services.stripe.subscription_enable')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Use Stripe Subscription</span>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -193,64 +181,56 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
 										<!-- ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Stripe Key</h6>
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('stripe_key') is-danger @enderror" id="stripe_key" name="stripe_key" value="{{ config('services.stripe.api_key') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('stripe_key') is-danger @enderror" id="stripe_key" name="stripe_key" value="{{ config('services.stripe.api_key') }}" autocomplete="off">
 											</div> 
 											@error('stripe_key')
 												<p class="text-danger">{{ $errors->first('stripe_key') }}</p>
 											@enderror
-										</div> <!-- END ACCESS KEY -->
+										 <!-- END ACCESS KEY -->
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<!-- SECRET ACCESS KEY -->
-										<div class="input-box">								
 											<h6>Stripe Secret Key</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('stripe_secret_key') is-danger @enderror" id="stripe_secret_key" name="stripe_secret_key" value="{{ config('services.stripe.api_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('stripe_secret_key') is-danger @enderror" id="stripe_secret_key" name="stripe_secret_key" value="{{ config('services.stripe.api_secret') }}" autocomplete="off">
 											</div> 
 											@error('stripe_secret_key')
 												<p class="text-danger">{{ $errors->first('stripe_secret_key') }}</p>
 											@enderror
-										</div> <!-- END SECRET ACCESS KEY -->
+										 <!-- END SECRET ACCESS KEY -->
 									</div>	
 									
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>Stripe Webhook URI</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('stripe_webhook_uri') is-danger @enderror" id="stripe_webhook_uri" name="stripe_webhook_uri" value="{{ config('services.stripe.webhook_uri') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('stripe_webhook_uri') is-danger @enderror" id="stripe_webhook_uri" name="stripe_webhook_uri" value="{{ config('services.stripe.webhook_uri') }}" autocomplete="off">
 											</div> 
 											@error('stripe_webhook_uri')
 												<p class="text-danger">{{ $errors->first('stripe_webhook_uri') }}</p>
 											@enderror
-										</div> 
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>Stripe Webhook SECRET</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('stripe_webhook_secret') is-danger @enderror" id="stripe_webhook_secret" name="stripe_webhook_secret" value="{{ config('services.stripe.webhook_secret') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('stripe_webhook_secret') is-danger @enderror" id="stripe_webhook_secret" name="stripe_webhook_secret" value="{{ config('services.stripe.webhook_secret') }}" autocomplete="off">
 											</div> 
 											@error('stripe_webhook_secret')
 												<p class="text-danger">{{ $errors->first('stripe_webhook_secret') }}</p>
 											@enderror
-										</div> 
 									</div>
 									
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
 											<h6>Stripe Base URI</h6> 
 											<div class="form-group">							    
-												<input type="text" class="form-control @error('stripe_base_uri') is-danger @enderror" id="stripe_base_uri" name="stripe_base_uri" value="{{ config('services.stripe.base_uri') }}" autocomplete="off">
+												<input type="text" class="form-control form-control-lg form-control-solid @error('stripe_base_uri') is-danger @enderror" id="stripe_base_uri" name="stripe_base_uri" value="{{ config('services.stripe.base_uri') }}" autocomplete="off">
 											</div> 
 											@error('stripe_base_uri')
 												<p class="text-danger">{{ $errors->first('stripe_base_uri') }}</p>
 											@enderror
-										</div> 
 									</div>
 									
 								</div>
@@ -267,29 +247,29 @@
 								<div class="row">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-bank-prepaid" class="custom-switch-input" @if (config('services.banktransfer.prepaid')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Enable for Prepaid Plans</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-bank-prepaid" class="form-check-input w-40px h-25px" @if (config('services.banktransfer.prepaid')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Enable for Prepaid Plans</span>
+											</div>
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group">
-											<label class="custom-switch">
-												<input type="checkbox" name="enable-bank-subscription" class="custom-switch-input" @if (config('services.banktransfer.subscription')  == 'on') checked @endif>
-												<span class="custom-switch-indicator"></span>
-												<span class="custom-switch-description">Enable for Subscription Plans</span>
-											</label>
+											<div class="form-check form-check-solid form-switch form-check-custom fv-row d-flex">
+												<input type="checkbox" name="enable-bank-subscription" class="form-check-input w-40px h-25px" @if (config('services.banktransfer.subscription')  == 'on') checked @endif>
+												{{-- <span class="custom-switch-indicator"></span> --}}
+												<span class="custom-switch-description" style="margin-left: 50px">Enable for Subscription Plans</span>
+											</div>
 										</div>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-12">								
-										<div class="input-box">								
+										<div class="form-floating">								
 											<h6>Customer Payment Intructions</h6>
-											<textarea class="form-control" name="bank_instructions" id="bank_instructions" rows="7">{{ $bank['bank_instructions'] }}</textarea> 
+											<textarea class="form-control" name="bank_instructions" id="bank_instructions" rows="7" style="height: 150px">{{ $bank['bank_instructions'] }}</textarea> 
 											@error('bank_instructions')
 												<p class="text-danger">{{ $errors->first('bank_instructions') }}</p>
 											@enderror
@@ -297,9 +277,9 @@
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="input-box">								
+										<div class="form-floating">								
 											<h6>Bank Account Requisites</h6> 
-											<textarea class="form-control" name="bank_requisites" id="bank_requisites" rows="7">{{ $bank['bank_requisites'] }}</textarea>
+											<textarea class="form-control" name="bank_requisites" id="bank_requisites" rows="7" style="height: 150px">{{ $bank['bank_requisites'] }}</textarea>
 											@error('bank_requisites')
 												<p class="text-danger">{{ $errors->first('bank_requisites') }}</p>
 											@enderror

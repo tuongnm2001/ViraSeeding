@@ -33,91 +33,77 @@
 
 						<div class="row">							
 							<div class="col-12">
-								<div class="input-box">								
-									<h6>{{ __('SMTP Host') }}</h6>
-									<div class="form-group">							    
-										<input type="text" class="form-control @error('smtp-host') is-danger @enderror" id="smtp-host" name="smtp-host" placeholder="SMTP Host Name" value="{{ config('mail.mailers.smtp.host') }}" required>
-										@error('smtp-host')
-											<p class="text-danger">{{ $errors->first('smtp-host') }}</p>
-										@enderror
-									</div> 
-								</div> 						
+								<h6>{{ __('SMTP Host') }}</h6>
+								<div class="form-group">							    
+									<input type="text" class="form-control form-control-lg form-control-solid @error('smtp-host') is-danger @enderror" id="smtp-host" name="smtp-host" placeholder="SMTP Host Name" value="{{ config('mail.mailers.smtp.host') }}" required>
+									@error('smtp-host')
+										<p class="text-danger">{{ $errors->first('smtp-host') }}</p>
+									@enderror
+								</div> 
 							</div>
 
 							<div class="col-12">
-								<div class="input-box">								
-									<h6>{{ __('SMTP Port') }}</h6>
-									<div class="form-group">							    
-										<input type="text" class="form-control @error('smtp-port') is-danger @enderror" id="smtp-port" name="smtp-port" placeholder="SMTP Port Number" value="{{ config('mail.mailers.smtp.port') }}" required>
-										@error('smtp-port')
-											<p class="text-danger">{{ $errors->first('smtp-port') }}</p>
-										@enderror
-									</div> 
-								</div> 						
+								<h6>{{ __('SMTP Port') }}</h6>
+								<div class="form-group">							    
+									<input type="text" class="form-control form-control-lg form-control-solid @error('smtp-port') is-danger @enderror" id="smtp-port" name="smtp-port" placeholder="SMTP Port Number" value="{{ config('mail.mailers.smtp.port') }}" required>
+									@error('smtp-port')
+										<p class="text-danger">{{ $errors->first('smtp-port') }}</p>
+									@enderror
+								</div> 
 							</div>
 
 							<div class="col-12">
-								<div class="input-box">								
-									<h6>{{ __('SMTP Username') }}</h6>
-									<div class="form-group">							    
-										<input type="text" class="form-control @error('smtp-username') is-danger @enderror" id="smtp-username" name="smtp-username" placeholder="SMTP Username" value="{{ config('mail.mailers.smtp.username') }}" required>
-										@error('smtp-username')
-											<p class="text-danger">{{ $errors->first('smtp-username') }}</p>
-										@enderror
-									</div> 
-								</div> 						
+								<h6>{{ __('SMTP Username') }}</h6>
+								<div class="form-group">							    
+									<input type="text" class="form-control form-control-lg form-control-solid @error('smtp-username') is-danger @enderror" id="smtp-username" name="smtp-username" placeholder="SMTP Username" value="{{ config('mail.mailers.smtp.username') }}" required>
+									@error('smtp-username')
+										<p class="text-danger">{{ $errors->first('smtp-username') }}</p>
+									@enderror
+								</div> 
 							</div>
 
 							<div class="col-12">
-								<div class="input-box">								
-									<h6>{{ __('SMTP Password') }}</h6>
-									<div class="form-group">							    
-										<input type="password" class="form-control @error('smtp-password') is-danger @enderror" id="smtp-password" name="smtp-password" placeholder="SMTP Password" value="{{ config('mail.mailers.smtp.password') }}" required>
-										@error('smtp-password')
-											<p class="text-danger">{{ $errors->first('smtp-password') }}</p>
-										@enderror
-									</div> 
-								</div> 						
+								<h6>{{ __('SMTP Password') }}</h6>
+								<div class="form-group">							    
+									<input type="password" class="form-control form-control-lg form-control-solid @error('smtp-password') is-danger @enderror" id="smtp-password" name="smtp-password" placeholder="SMTP Password" value="{{ config('mail.mailers.smtp.password') }}" required>
+									@error('smtp-password')
+										<p class="text-danger">{{ $errors->first('smtp-password') }}</p>
+									@enderror
+								</div> 
 							</div>
 
 							<div class="col-12">
-								<div class="input-box">								
-									<h6>{{ __('Sender Email Address') }}</h6>
-									<div class="form-group">							    
-										<input type="text" class="form-control @error('smtp-from') is-danger @enderror" id="smtp-from" name="smtp-from" placeholder="Sender Email Address" value="{{ config('mail.from.address') }}" required>
-										@error('smtp-from')
-											<p class="text-danger">{{ $errors->first('smtp-from') }}</p>
-										@enderror
-									</div> 
-								</div> 						
+								<h6>{{ __('Sender Email Address') }}</h6>
+								<div class="form-group">							    
+									<input type="text" class="form-control form-control-lg form-control-solid @error('smtp-from') is-danger @enderror" id="smtp-from" name="smtp-from" placeholder="Sender Email Address" value="{{ config('mail.from.address') }}" required>
+									@error('smtp-from')
+										<p class="text-danger">{{ $errors->first('smtp-from') }}</p>
+									@enderror
+								</div> 
 							</div>
 
 							<div class="col-12">
-								<div class="input-box">								
-									<h6>{{ __('Sender Name') }}</h6>
-									<div class="form-group">							    
-										<input type="text" class="form-control @error('smtp-name') is-danger @enderror" id="smtp-name" name="smtp-name" placeholder="Sender Full Name" value="{{ config('mail.from.name') }}" required>
-										@error('smtp-name')
-											<p class="text-danger">{{ $errors->first('smtp-name') }}</p>
-										@enderror
-									</div> 
-								</div> 						
+								<h6>{{ __('Sender Name') }}</h6>
+								<div class="form-group">							    
+									<input type="text" class="form-control form-control-lg form-control-solid @error('smtp-name') is-danger @enderror" id="smtp-name" name="smtp-name" placeholder="Sender Full Name" value="{{ config('mail.from.name') }}" required>
+									@error('smtp-name')
+										<p class="text-danger">{{ $errors->first('smtp-name') }}</p>
+									@enderror
+								</div> 
 							</div>
 
 							<div class="col-12">							
-								<div class="input-box">	
-									<h6>{{ __('SMTP Encryption') }}</h6>
-			  						<select id="smtp-encryption" name="smtp-encryption" data-placeholder="Select SMTP Encryption Type:">			
-										<option value="tls" @if ( config('mail.mailers.smtp.encryption')  == 'tls') selected @endif>TLS</option>
-										<option value="ssl" @if ( config('mail.mailers.smtp.encryption')  == 'ssl') selected @endif>SSL</option>
-									</select>
-								</div> 							
+								<h6>{{ __('SMTP Encryption') }}</h6>
+								<select class="form-select form-select-solid form-select-lg fw-semibold" name="smtp-encryption" data-placeholder="Select SMTP Encryption Type:">			
+									<option value="tls" @if ( config('mail.mailers.smtp.encryption')  == 'tls') selected @endif>TLS</option>
+									<option value="ssl" @if ( config('mail.mailers.smtp.encryption')  == 'ssl') selected @endif>SSL</option>
+								</select>
 							</div>
 
 						</div>
 
 						<!-- SAVE CHANGES ACTION BUTTON -->
-						<div class="border-0 text-right mb-2 mt-1">
+						<div class="border-0 text-right mb-2 mt-4">
 							<button href="#" type="button" class="btn btn-cancel mr-2" data-toggle="modal" data-target="#test-email">{{ __('Test') }}</button>
 							<button type="submit" class="btn btn-primary">{{ __('Save') }}</button>							
 						</div>				

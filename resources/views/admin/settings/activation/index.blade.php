@@ -39,22 +39,20 @@
 							</div>
 
 							<div class="col-sm-12 col-md-12">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Enter Activation License') }}</label>
-										<input type="text" class="form-control @error('license') is-danger @enderror" name="license" value="{{ config('settings.envato.activation') }}" required>
+										<input type="text" class="form-control form-control-lg form-control-solid @error('license') is-danger @enderror" name="license" value="{{ config('settings.envato.activation') }}" required>
 										@error('license')
 											<p class="text-danger">{{ $errors->first('license') }}</p>
 										@enderror									
 									</div>
-								</div>
 							</div>
 
 							<div class="col-sm-12 col-md-12">
-								<div class="input-box mb-1">
+								<div class="mb-1">
 									<div class="form-group mb-1">
 										<label class="form-label fs-12">{{ __('Enter Envato Username') }}</label>
-										<input type="text" class="form-control @error('username') is-danger @enderror" name="username" value="{{ config('settings.envato.username') }}" required>
+										<input type="text" class="form-control form-control-lg form-control-solid @error('username') is-danger @enderror" name="username" value="{{ config('settings.envato.username') }}" required>
 										@error('username')
 											<p class="text-danger">{{ $errors->first('username') }}</p>
 										@enderror									

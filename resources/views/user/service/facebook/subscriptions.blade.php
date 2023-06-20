@@ -29,9 +29,9 @@
 				</div>
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
-					<table id='mySubscriptionsTable' class='table' width='100%'>
+					<table id='mySubscriptionsTable' class="table align-middle table-row-dashed fs-6 gy-5">
 							<thead>
-								<tr>
+								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
 									<th width="10%">{{ __('Subscribed On') }}</th>											
 									<th width="10%">{{ __('Plan Name') }}</th>
 									<th width="10%">{{ __('Gateway') }}</th>

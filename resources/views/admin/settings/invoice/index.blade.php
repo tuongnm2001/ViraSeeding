@@ -35,7 +35,7 @@
 							<div class="col-md-6 col-sm-12">							
 								<div class="input-box">	
 									<h6>{{ __('Invoice Currency') }}</h6>
-									<select id="invoice-currency" name="invoice_currency" data-placeholder="Select Currency:">			
+									<select class="form-select form-select-solid form-select-lg fw-semibold" name="invoice_currency" data-placeholder="Select Currency:">			
 										<option value="AFA" @if ($invoice['invoice_currency'] == 'AFA') selected @endif>Afghan Afghani</option>
 										<option value="ALL" @if ($invoice['invoice_currency'] == 'ALL') selected @endif>Albanian Lek</option>
 										<option value="DZD" @if ($invoice['invoice_currency'] == 'DZD') selected @endif>Algerian Dinar</option>
@@ -206,7 +206,7 @@
 							<div class="col-md-6 col-sm-12">							
 								<div class="input-box">	
 									<h6>{{ __('Invoice Language') }}</h6>
-			  						<select id="invoice-language" name="invoice_language" data-placeholder="Select Language:">			
+			  						<select class="form-select form-select-solid form-select-lg fw-semibold" name="invoice_language" data-placeholder="Select Language:">			
 										<option value="br" @if ($invoice['invoice_language'] == 'br') selected @endif>BR</option>
 										<option value="de" @if ($invoice['invoice_language'] == 'de') selected @endif>DE</option>
 										<option value="en" @if ($invoice['invoice_language'] == 'en') selected @endif>EN</option>
@@ -225,81 +225,69 @@
 							</div>
 
 							<div class="col-md-6 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('Company Name') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_vendor') is-danger @enderror" id="invoice_vendor" name="invoice_vendor" value="{{ $invoice['invoice_vendor'] }}" required>
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_vendor') is-danger @enderror" id="invoice_vendor" name="invoice_vendor" value="{{ $invoice['invoice_vendor'] }}" required>
 										@error('invoice_vendor')
 											<p class="text-danger">{{ $errors->first('invoice_vendor') }}</p>
 										@enderror
-									</div> 
 								</div> 						
 							</div>
 
 							<div class="col-md-6 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('Company Website') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_vendor_website') is-danger @enderror" id="invoice_vendor_website" name="invoice_vendor_website" value="{{ $invoice['invoice_vendor_website'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_vendor_website') is-danger @enderror" id="invoice_vendor_website" name="invoice_vendor_website" value="{{ $invoice['invoice_vendor_website'] }}">
 										@error('invoice_vendor_website')
 											<p class="text-danger">{{ $errors->first('invoice_vendor_website') }}</p>
 										@enderror
 									</div> 
-								</div> 						
 							</div>
 
 							<div class="col-12">
-								<div class="input-box">								
 									<h6>{{ __('Business Address') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_address') is-danger @enderror" id="invoice_address" name="invoice_address" value="{{ $invoice['invoice_address'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_address') is-danger @enderror" id="invoice_address" name="invoice_address" value="{{ $invoice['invoice_address'] }}">
 										@error('invoice_address')
 											<p class="text-danger">{{ $errors->first('invoice_address') }}</p>
 										@enderror
 									</div> 
-								</div> 						
 							</div>
 
 							<div class="col-md-4 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('City') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_city') is-danger @enderror" id="invoice_city" name="invoice_city" value="{{ $invoice['invoice_city'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_city') is-danger @enderror" id="invoice_city" name="invoice_city" value="{{ $invoice['invoice_city'] }}">
 										@error('invoice_city')
 											<p class="text-danger">{{ $errors->first('invoice_city') }}</p>
 										@enderror
-									</div> 
 								</div> 						
 							</div>
 
 							<div class="col-md-2 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('State') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_state') is-danger @enderror" id="invoice_state" name="invoice_state" value="{{ $invoice['invoice_state'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_state') is-danger @enderror" id="invoice_state" name="invoice_state" value="{{ $invoice['invoice_state'] }}">
 										@error('invoice_state')
 											<p class="text-danger">{{ $errors->first('invoice_state') }}</p>
 										@enderror
-									</div> 
 								</div> 						
 							</div>
 
 							<div class="col-md-2 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('Postal Code') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_postal_code') is-danger @enderror" id="invoice_postal_code" name="invoice_postal_code" value="{{ $invoice['invoice_postal_code'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_postal_code') is-danger @enderror" id="invoice_postal_code" name="invoice_postal_code" value="{{ $invoice['invoice_postal_code'] }}">
 										@error('invoice_postal_code')
 											<p class="text-danger">{{ $errors->first('invoice_postal_code') }}</p>
 										@enderror
-									</div> 
 								</div> 						
 							</div>
 
 							<div class="col-md-4 col-sm-12">							
 								<div class="input-box">	
 									<h6>{{ __('Country') }}</h6>
-									<select id="invoice-country" name="invoice_country" data-placeholder="Select Your Country:">	
+									<select class="form-select form-select-solid form-select-lg fw-semibold" name="invoice_country" data-placeholder="Select Your Country:">	
 										<option value="Afganistan" {{ ($invoice['invoice_country'] == 'Afganistan') ? 'selected' : '' }}><img src="{{URL::asset('img/csp/aws-lg.png')}}" class="csp-brand-img"> Afghanistan</option>
 										<option value="Albania" {{ ($invoice['invoice_country'] == 'Albania') ? 'selected' : '' }}>Albania</option>
 										<option value="Algeria" {{ ($invoice['invoice_country'] == 'Algeria') ? 'selected' : '' }}>Algeria</option>
@@ -551,27 +539,23 @@
 							</div>
 
 							<div class="col-md-6 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('Phone Number') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_phone') is-danger @enderror" id="invoice_phone" name="invoice_phone" value="{{ $invoice['invoice_phone'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_phone') is-danger @enderror" id="invoice_phone" name="invoice_phone" value="{{ $invoice['invoice_phone'] }}">
 										@error('invoice_phone')
 											<p class="text-danger">{{ $errors->first('invoice_phone') }}</p>
 										@enderror
-									</div> 
 								</div> 						
 							</div>
 
 							<div class="col-md-6 col-sm-12">
-								<div class="input-box">								
 									<h6>{{ __('VAT Number') }}</h6>
 									<div class="form-group">							    
-										<input type="text" class="form-control @error('invoice_vat_number') is-danger @enderror" id="invoice_vat_number" name="invoice_vat_number" value="{{ $invoice['invoice_vat_number'] }}">
+										<input type="text" class="form-control form-control-lg form-control-solid @error('invoice_vat_number') is-danger @enderror" id="invoice_vat_number" name="invoice_vat_number" value="{{ $invoice['invoice_vat_number'] }}">
 										@error('invoice_vat_number')
 											<p class="text-danger">{{ $errors->first('invoice_vat_number') }}</p>
 										@enderror
 									</div> 
-								</div> 						
 							</div>
 
 						</div>

@@ -32,7 +32,7 @@
 							<div class="row">
 								<div class="col-md-2 col-sm-12">
 									<div class="form-group">									
-										<select id="languages" name="language" data-placeholder="{{ __('Pick Your Language') }}:" data-callback="language_select">	
+										<select id="languages" class="form-select form-select-solid form-select-lg fw-semibold" name="language" data-placeholder="{{ __('Pick Your Language') }}:" data-callback="language_select">	
 											@foreach ($languages as $language)
 												<option value="{{ $language->language_code }}" data-img="{{ URL::asset($language->language_flag) }}"> {{ $language->language }}</option>
 											@endforeach											

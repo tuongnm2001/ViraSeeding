@@ -39,22 +39,20 @@
                             <p class="text-danger">{{ $error }}</p>
                          @endforeach 
 
-						<div class="input-box">	
 							<div class="form-group">
 								<label class="form-label fs-12">{{ __('Current Password') }}</label>
-								<input type="password" name='current_password' class="form-control">
+								<input type="password" name='current_password' class="form-control form-control-solid">
 							</div>
-						</div>
-						<div class="input-box">
+
 							<div class="form-group">
 								<label class="form-label fs-12">{{ __('New Password') }}</label>
-								<input type="password" name="new_password" class="form-control">
+								<input type="password" name="new_password" class="form-control form-control-solid">
 							</div>
-						</div>
-						<div class="input-box mb-0">
+
+						<div class="mb-0">
 							<div class="form-group mb-0">
 								<label class="form-label fs-12">{{ __('Confirm New Password') }}</label>
-								<input type="password" name="new_confirm_password" class="form-control">
+								<input type="password" name="new_confirm_password" class="form-control form-control-solid">
 							</div>
 						</div>
 						<div class="card-footer border-0 text-right mt-2 pr-0 pb-0">

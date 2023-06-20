@@ -35,15 +35,13 @@
 						<div class="row">
                             <!-- HEADING -->
                             <div class="col-lg-12 col-md-12 col-sm-12">
-								<div class="input-box">
 									<h6>{{ __('URL String') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="https://www.facebook.com/{uid}" id="urlstring" name="urlstring" value="{{ old('urlstring') }}" required>
+										<input type="text" class="form-control form-control-solid" placeholder="https://www.facebook.com/{uid}" id="urlstring" name="urlstring" value="{{ old('urlstring') }}" required>
 									</div>
 									@error('urlstring')
 										<p class="text-danger">{{ $errors->first('urlstring') }}</p>
 									@enderror
-								</div>
 							</div>
                             <!-- END HEADING -->
 
@@ -51,27 +49,25 @@
 
 						<div class="row mt-2">
 							<div class="col-lg-6 col-md-6col-sm-12">
-								<div class="input-box">
+							
 									<h6>{{ __('Amount') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
-										<input type="text" class="form-control" id="amount" name="amount" value="{{ old('amount') }}" required>
+										<input type="text" class="form-control form-control-solid" id="amount" name="amount" value="{{ old('amount') }}" required>
 									</div>
 									@error('amount')
 										<p class="text-danger">{{ $errors->first('amount') }}</p>
 									@enderror
-								</div>
+								
 							</div>
 
 							<div class="col-lg-6 col-md-6col-sm-12">
-								<div class="input-box">
 									<h6>{{ __('Price') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
-										<input type="text" class="form-control" id="cost" name="cost" value="{{ old('cost') }}" required>
+										<input type="text" class="form-control form-control-solid" id="cost" name="cost" value="{{ old('cost') }}" required>
 									</div>
 									@error('cost')
 										<p class="text-danger">{{ $errors->first('cost') }}</p>
 									@enderror
-								</div>
 							</div>
 
 
@@ -79,7 +75,7 @@
 
 						<div class="row mt-2">
 							<div class="col-lg-12 col-md-12 col-sm-12">
-								<div class="input-box">
+								<div class="form-floating">
 									<h6>{{ __('Note') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
                                         <textarea class="form-control" id="note" name="note" value="{{ old('note') }}" rows="3"></textarea>
