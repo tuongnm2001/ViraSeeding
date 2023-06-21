@@ -420,7 +420,7 @@
                                     @if (auth()->user()->unreadNotifications->where('type', '<>', 'App\Notifications\GeneralNotification')->count())
                                         <span class="badge badge-warning" id="total-notifications-a"></span>
                                     @else
-                                        <i class="angle fa fa-angle-right"></i>
+                                        <i class="angle fa fa-angle-down"></i>
                                     @endif
                                 </span>
                                 <!--end:Menu link-->
@@ -692,122 +692,61 @@
                     <hr class="slide-divider d-none">
                 @endrole
                 <!--begin::Heading User Panel-->
-                <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
-                    <li class="menu-item mb-2">
-                        {{-- <div class="menu-heading text-uppercase fs-7 fw-bold">User Panel</div> --}}
-                        <li class=" side-item side-item-category menu-heading text-uppercase fs-7 fw-bold">{{ __('User Panel') }}</li>
-                    </li>
-                    <!--end::Heading-->
-
-                    <!--begin:Menu item Text-to-Speech-->
-                        <li class="menu-item menu-accordion">
-                            <!--begin:Menu link-->  
-                                <a class="menu-link" href="{{route('user.tts') }}">
-                                    <span class="menu-icon">
-                                        <i class="side-menu__icon enlarge lead-3 fa fa-magic fs-2"></i>											
-                                    </span>
-                                    <span class="menu-title">{{ __('Text-to-Speech') }}</span>
-                                </a>
-                            <!--end:Menu link-->
+                    <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
+                        <li class="menu-item mb-2">
+                            {{-- <div class="menu-heading text-uppercase fs-7 fw-bold">User Panel</div> --}}
+                            <li class=" side-item side-item-category menu-heading text-uppercase fs-7 fw-bold">{{ __('User Panel') }}</li>
                         </li>
-                    <!--end:Menu item-->
+                        <!--end::Heading-->
 
-                    <!--begin:Menu item All Voices-->
-                        <li class="menu-item menu-accordion">
-                            <!--begin:Menu link-->  
-                                <a class="menu-link" href="{{route('user.tts.voices') }}">
+                        <!--begin:Menu item Text-to-Speech-->
+                            <li class="menu-item menu-accordion">
+                                <!--begin:Menu link-->  
+                                    <a class="menu-link" href="{{route('user.tts') }}">
+                                        <span class="menu-icon">
+                                            <i class="side-menu__icon enlarge lead-3 fa fa-magic fs-2"></i>											
+                                        </span>
+                                        <span class="menu-title">{{ __('Text-to-Speech') }}</span>
+                                    </a>
+                                <!--end:Menu link-->
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item All Voices-->
+                            <li class="menu-item menu-accordion">
+                                <!--begin:Menu link-->  
+                                    <a class="menu-link" href="{{route('user.tts.voices') }}">
+                                        <span class="menu-icon">
+                                            <i class="side-menu__icon mdi mdi-access-point fs-2"></i>											
+                                        </span>
+                                        <span class="menu-title">{{ __('All Voices') }}</span>
+                                    </a>
+                                <!--end:Menu link-->
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item My Balance-->
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <!--begin:Menu link-->
+                                <span class="menu-link">
                                     <span class="menu-icon">
-                                        <i class="side-menu__icon mdi mdi-access-point fs-2"></i>											
+                                        <i class="side-menu__icon enlarge fa fa-google-wallet fs-2"></i>
                                     </span>
-                                    <span class="menu-title">{{ __('All Voices') }}</span>
-                                </a>
-                            <!--end:Menu link-->
-                        </li>
-                    <!--end:Menu item-->
-
-                    <!--begin:Menu item My Balance-->
-                        <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <!--begin:Menu link-->
-                            <span class="menu-link">
-                                <span class="menu-icon">
-                                    <i class="side-menu__icon enlarge fa fa-google-wallet fs-2"></i>
+                                    <span class="menu-title">{{ __('My Balance') }}</span>
+                                    <span class="menu-arrow"></span>
                                 </span>
-                                <span class="menu-title">{{ __('My Balance') }}</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <!--end:Menu link-->
-                            <!--begin:Menu sub Subscribe Now-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item -->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.subscriptions') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Subscribe Now') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub My Subscriptions-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item -->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.balance.subscriptions') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('My Subscriptions') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub My Payments-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.balance.payments') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('My Payments') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub My Referrals-->
-                            @if (config('payment.referral.enabled')  == 'on')
+                                <!--end:Menu link-->
+                                <!--begin:Menu sub Subscribe Now-->
                                 <div class="menu-sub menu-sub-accordion">
-                                    <!--begin:Menu item-->
+                                    <!--begin:Menu item -->
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.referral') }}">
+                                            <a class="menu-link" href="{{ route('user.subscriptions') }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">{{ __('My Referrals') }}</span>
+                                                <span class="menu-title">{{ __('Subscribe Now') }}</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -815,242 +754,303 @@
                                     </div>
                                     <!--end:Menu item-->
                                 </div>
-                            @endif
-                            <!--end:Menu sub-->
+                                <!--end:Menu sub-->
 
-                            <!--begin:Menu sub My Balance Dashboard-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.balance') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('My Balance Dashboard') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
+                                <!--begin:Menu sub My Subscriptions-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item -->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.balance.subscriptions') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('My Subscriptions') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
                                     </div>
-                                    <!--end:Menu item-->      
+                                    <!--end:Menu item-->
                                 </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
+                                <!--end:Menu sub-->
 
-                        </li>
-                    <!--end:Menu item-->
-
-                    <!--begin:Menu item Service-->
-                        <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <!--begin:Menu link-->
-                            <span class="menu-link">
-                                <span class="menu-icon">
-                                    <i class="side-menu__icon enlarge fa fa-google-wallet fs-2"></i>
-                                </span>
-                                <span class="menu-title">{{ __('Service') }}</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <!--end:Menu link-->
-
-                            <!--begin:Menu sub Get Like Post-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item -->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.service.facebook.likepost') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Get Like Post') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
+                                <!--begin:Menu sub My Payments-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.balance.payments') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('My Payments') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
                                     </div>
-                                    <!--end:Menu item-->      
+                                    <!--end:Menu item-->
                                 </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
+                                <!--end:Menu sub-->
 
-                            <!--begin:Menu sub MGet Like Page-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item -->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.service.facebook.likepage') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Get Like Page') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
+                                <!--begin:Menu sub My Referrals-->
+                                @if (config('payment.referral.enabled')  == 'on')
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <div class="menu-item ">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" href="{{ route('user.referral') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('My Referrals') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->      
+                                        </div>
+                                        <!--end:Menu item-->
                                     </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub Get Follow-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.service.facebook.follow') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Get Follow') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub Get Share-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.service.facebook.share') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Get Share') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub Get Comment-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.service.facebook.comment') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Get Comment') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                        </li>
-                    <!--end:Menu item-->
-
-                    <!--begin:Menu item My TTS Audio Results-->
-                        <li class="menu-item menu-accordion">
-                            <!--begin:Menu link-->  
-                                <a class="menu-link" href="{{route('user.tts.results') }}">
-                                    <span class="menu-icon">
-                                        <i class="side-menu__icon mdi mdi-audiobook fs-2"></i>											
-                                    </span>
-                                    <span class="menu-title">{{ __('My TTS Audio Results') }}</span>
-                                </a>
-                            <!--end:Menu link-->
-                        </li>
-                    <!--end:Menu item-->
-
-                    <!--begin:Menu item My Profile Settings-->
-                        <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <!--begin:Menu link-->
-                            <span class="menu-link">
-                                <span class="menu-icon">
-                                    <i class="side-menu__icon mdi mdi-account-settings-variant fs-2"></i>
-                                </span>
-                                <span class="menu-title">{{ __('My Profile Settings') }}</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <!--end:Menu link-->
-                            <!--begin:Menu sub My Profile-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.profile') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('My Profile') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-
-                            <!--begin:Menu sub  Change Password-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <div class="menu-item ">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="{{ route('user.password') }}">
-                                            <span class="menu-bullet">
-                                                <span class="bullet bullet-dot"></span>
-                                            </span>
-                                            <span class="menu-title">{{ __('Change Password') }}</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->      
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-                        </li>
-                    <!--end:Menu item-->
-
-                    <!--begin:Menu item Support Request-->
-                        <li class="menu-item menu-accordion">
-                            <!--begin:Menu link-->  
-                                <a class="menu-link" href="{{route('user.support') }}">
-                                    <span class="menu-icon">
-                                        <i class="side-menu__icon mdi mdi-account-alert fs-2"></i>											
-                                    </span>
-                                    <span class="menu-title">{{ __('Support Request') }}</span>
-                                </a>
-                            <!--end:Menu link-->
-                        </li>
-                    <!--end:Menu item-->
-
-                    <!--begin:Menu item Notifications-->
-                        <li class="menu-item menu-accordion">
-                            <!--begin:Menu link-->  
-                            <span class="menu-link" href="{{route('user.notifications') }}">
-                                <span class="menu-icon">
-                                    <i class="side-menu__icon mdi mdi-upload-network fs-2"></i>											
-                                </span>
-                                <span class="menu-title">{{ __('Notifications') }}</span>
-                                @if (auth()->user()->unreadNotifications->where('type', 'App\Notifications\GeneralNotification')->count())
-                                    <span class="badge badge-warning">{{ auth()->user()->unreadNotifications->where('type', 'App\Notifications\GeneralNotification')->count() }}</span>
                                 @endif
-                            </span>
-                            <!--end:Menu link-->
-                        </li>
-                    <!--end:Menu item-->
-                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub My Balance Dashboard-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.balance') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('My Balance Dashboard') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item Service-->
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <!--begin:Menu link-->
+                                <span class="menu-link">
+                                    <span class="menu-icon">
+                                        <i class="side-menu__icon enlarge fa fa-google-wallet fs-2"></i>
+                                    </span>
+                                    <span class="menu-title">{{ __('Service') }}</span>
+                                    <span class="menu-arrow"></span>
+                                </span>
+                                <!--end:Menu link-->
+
+                                <!--begin:Menu sub Get Like Post-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item -->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.likepost') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Get Like Post') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub MGet Like Page-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item -->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.likepage') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Get Like Page') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub Get Follow-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.follow') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Get Follow') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub Get Share-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.share') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Get Share') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub Get Comment-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.comment') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Get Comment') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item My TTS Audio Results-->
+                            <li class="menu-item menu-accordion">
+                                <!--begin:Menu link-->  
+                                    <a class="menu-link" href="{{route('user.tts.results') }}">
+                                        <span class="menu-icon">
+                                            <i class="side-menu__icon mdi mdi-audiobook fs-2"></i>											
+                                        </span>
+                                        <span class="menu-title">{{ __('My TTS Audio Results') }}</span>
+                                    </a>
+                                <!--end:Menu link-->
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item My Profile Settings-->
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <!--begin:Menu link-->
+                                <span class="menu-link">
+                                    <span class="menu-icon">
+                                        <i class="side-menu__icon mdi mdi-account-settings-variant fs-2"></i>
+                                    </span>
+                                    <span class="menu-title">{{ __('My Profile Settings') }}</span>
+                                    <span class="menu-arrow"></span>
+                                </span>
+                                <!--end:Menu link-->
+                                <!--begin:Menu sub My Profile-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.profile') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('My Profile') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub  Change Password-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.password') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Change Password') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item Support Request-->
+                            <li class="menu-item menu-accordion">
+                                <!--begin:Menu link-->  
+                                    <a class="menu-link" href="{{route('user.support') }}">
+                                        <span class="menu-icon">
+                                            <i class="side-menu__icon mdi mdi-account-alert fs-2"></i>											
+                                        </span>
+                                        <span class="menu-title">{{ __('Support Request') }}</span>
+                                    </a>
+                                <!--end:Menu link-->
+                            </li>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item Notifications-->
+                            <li class="menu-item menu-accordion">
+                                <!--begin:Menu link-->  
+                                <a class="menu-link" href="{{route('user.notifications') }}">
+                                    <span class="menu-icon">
+                                        <i class="side-menu__icon mdi mdi-upload-network fs-2"></i>											
+                                    </span>
+                                    <span class="menu-title">{{ __('Notifications') }}</span>
+                                    @if (auth()->user()->unreadNotifications->where('type', 'App\Notifications\GeneralNotification')->count())
+                                        <span class="badge badge-warning">{{ auth()->user()->unreadNotifications->where('type', 'App\Notifications\GeneralNotification')->count() }}</span>
+                                    @endif
+                                </a>
+                                <!--end:Menu link-->
+                            </li>
+                        <!--end:Menu item-->
+                    </div>
                 <!--end::Sidebar menu-->
 
                 @role('user')

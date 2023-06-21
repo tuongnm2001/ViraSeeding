@@ -17,8 +17,9 @@
 
 @section('content')						
 	<!-- TOP BOX INFO -->
-	<div class="row">		
-		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+	<div class="row">	
+
+		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -40,7 +41,41 @@
 					</div>
 				</div>
 			</div>
+		</div> --}}
+
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-primary shadow h-100 py-2">
+				<div class="card-body">
+					
+					<div class="d-flex align-items-end justify-content-between">
+						<div class="col mr-2">
+							<p class=" mb-3 fs-12 font-weight-bold">{{ __('Total Income') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
+
+							<div class="h5 mb-0 font-weight-bold ">
+								{{-- <h2 class="mb-0"><span class="number-font fs-20">{{ number_format($total_data_monthly['new_users_current_month'][0]['data']) }}</span><span class="ml-2 text-muted fs-11 data-percentage-change"><span id="users_change"></span> {{ __('this month') }}</span></h2> --}}
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fa-solid fa-building-columns fs-2hx text-gray-600"></i>
+						</div>
+					</div>
+
+					<div class="d-flex mt-2">
+						<div>
+							{{-- <span class="text-muted fs-12 mr-1">{{ __('Last Month') }}</span> --}}
+							{{-- <span class="number-font fs-12"><i class="fa fa-chain mr-1 text-success"></i>{{ number_format($total_data_monthly['new_users_past_month'][0]['data']) }}</span> --}}
+						</div>
+						
+						<div class="ml-auto">
+							{{-- <span class="text-muted fs-12 mr-1">{{ __('Current Year') }} ({{ __('Total') }})</span> --}}
+							{{-- <span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{{ number_format($total_data_yearly['total_new_users'][0]['data']) }}</span> --}}
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -64,6 +99,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -88,6 +124,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -111,6 +148,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -142,6 +180,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -173,6 +212,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -204,6 +244,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
@@ -235,6 +276,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 	<!-- END TOP BOX INFO -->
 
