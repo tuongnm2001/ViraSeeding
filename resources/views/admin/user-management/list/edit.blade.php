@@ -37,43 +37,37 @@
 						@csrf
 						<div class="row">
 							<div class="col-sm-6 col-md-6">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Full Name') }}</label>
-										<input type="text" class="form-control @error('name') is-danger @enderror" name="name" value="{{ $user->name }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('name') is-danger @enderror" name="name" value="{{ $user->name }}">
 										@error('name')
 											<p class="text-danger">{{ $errors->first('name') }}</p>
 										@enderror									
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Email Address') }}</label>
-										<input type="email" class="form-control @error('email') is-danger @enderror" name="email" value="{{ $user->email }}">
+										<input type="email" class="form-control form-control form-control-lg form-control-solid @error('email') is-danger @enderror" name="email" value="{{ $user->email }}">
 										@error('email')
 											<p class="text-danger">{{ $errors->first('email') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Job Role') }}</label>
-										<input type="text" class="form-control @error('job_role') is-danger @enderror" name="job_role" value="{{ $user->job_role }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('job_role') is-danger @enderror" name="job_role" value="{{ $user->job_role }}">
 										@error('job_role')
 											<p class="text-danger">{{ $errors->first('job_role') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>						
 							<div class="col-sm-6 col-md-6">
 								<div class="input-box">
 									<div class="form-group">								
 										<label class="form-label fs-12">{{ __('Phone Number') }}</label>
-										<input type="tel" class="fs-12 @error('phone_number') is-danger @enderror" id="phone-number" name="phone_number" value="{{ $user->phone_number }}">
+										<input type="tel" class="fs-12 form-control form-control-lg form-control-solid @error('phone_number') is-danger @enderror" id="phone-number" name="phone_number" value="{{ $user->phone_number }}">
 										@error('phone_number')
 											<p class="text-danger">{{ $errors->first('phone_number') }}</p>
 										@enderror
@@ -81,64 +75,54 @@
 								</div>
 							</div>			
 							<div class="col-sm-6 col-md-6">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Company Name') }}</label>
-										<input type="text" class="form-control @error('company') is-danger @enderror" name="company" value="{{ $user->company }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('company') is-danger @enderror" name="company" value="{{ $user->company }}">
 										@error('company')
 											<p class="text-danger">{{ $errors->first('company') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Company Website') }}</label>
-										<input type="text" class="form-control @error('website') is-danger @enderror" name="website" value="{{ $user->website }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('website') is-danger @enderror" name="website" value="{{ $user->website }}">
 										@error('website')
 											<p class="text-danger">{{ $errors->first('website') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>
 							<div class="col-md-12">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Address Line') }}</label>
-										<input type="text" class="form-control @error('address') is-danger @enderror" name="address" value="{{ $user->address }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('address') is-danger @enderror" name="address" value="{{ $user->address }}">
 										@error('address')
 											<p class="text-danger">{{ $errors->first('address') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-6 col-md-4">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('City') }}</label>
-										<input type="text" class="form-control @error('city') is-danger @enderror" name="city" value="{{ $user->city }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('city') is-danger @enderror" name="city" value="{{ $user->city }}">
 										@error('city')
 											<p class="text-danger">{{ $errors->first('city') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-6 col-md-3">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Postal Code') }}</label>
-										<input type="text" class="form-control @error('postal_code') is-danger @enderror" name="postal_code" value="{{ $user->postal_code }}">
+										<input type="text" class="form-control form-control form-control-lg form-control-solid @error('postal_code') is-danger @enderror" name="postal_code" value="{{ $user->postal_code }}">
 										@error('postal_code')
 											<p class="text-danger">{{ $errors->first('postal_code') }}</p>
 										@enderror
 									</div>
-								</div>
 							</div>
 							<div class="col-md-5">
 								<div class="form-group">
 									<label class="form-label fs-12">{{ __('Country') }}</label>
-									<select id="user-country" name="country" data-placeholder="Select Your Country:">	
+									<select class="form-select form-select-solid form-select-lg fw-semibold" name="country" data-placeholder="Select Your Country:">	
 										<option value="Afganistan" {{ ($user->country == 'Afganistan') ? 'selected' : '' }}>Afghanistan</option>
 										<option value="Albania" {{ ($user->country == 'Albania') ? 'selected' : '' }}>Albania</option>
 										<option value="Algeria" {{ ($user->country == 'Algeria') ? 'selected' : '' }}>Algeria</option>
@@ -413,7 +397,7 @@
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label class="form-label fs-12">{{ __('User Status') }}</label>
-									<select id="user-status" name="status" data-placeholder="Select User Status">	
+									<select class="form-select form-select-solid form-select-lg fw-semibold" name="status" data-placeholder="Select User Status">	
 										<option value="pending" {{ ($user->status == 'pending') ? 'selected' : '' }}>Pending</option>
 										<option value="active" {{ ($user->status == 'active') ? 'selected' : '' }}>Active</option>
 										<option value="suspended" {{ ($user->status == 'suspended') ? 'selected' : '' }}>Suspended</option>
@@ -427,7 +411,7 @@
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label class="form-label fs-12">{{ __('User Group') }}</label>
-									<select id="user-group" name="group" data-placeholder="Select User Group">	
+									<select class="form-select form-select-solid form-select-lg fw-semibold" name="group" data-placeholder="Select User Group">	
 										<option value="user" {{ ($user->group == 'user') ? 'selected' : '' }}>User</option>
 										<option value="subscriber" {{ ($user->group == 'subscriber') ? 'selected' : '' }}>Subscriber</option>
 										<option value="admin" {{ ($user->group == 'admin') ? 'selected' : '' }}>Administrator</option>																		
@@ -438,26 +422,22 @@
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-12">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('New Password') }}</label>
-										<input type="password" class="form-control @error('new-password') is-danger @enderror" name="password">
+										<input type="password" class="form-control form-control form-control-lg form-control-solid @error('new-password') is-danger @enderror" name="password">
 										@error('password')
 											<p class="text-danger">{{ $errors->first('password') }}</p>
 										@enderror									
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-12 col-md-12">
-								<div class="input-box">
 									<div class="form-group">
 										<label class="form-label fs-12">{{ __('Confirm New Password') }}</label>
-										<input type="password" class="form-control @error('password_confirmation') is-danger @enderror" name="password_confirmation">
+										<input type="password" class="form-control form-control form-control-lg form-control-solid @error('password_confirmation') is-danger @enderror" name="password_confirmation">
 										@error('password_confirmation')
 											<p class="text-danger">{{ $errors->first('password_confirmation') }}</p>
 										@enderror									
 									</div>
-								</div>
 							</div>
 						</div>
 						<div class="card-footer border-0 text-right pb-0 pr-0">							

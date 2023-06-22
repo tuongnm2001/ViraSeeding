@@ -1,24 +1,33 @@
 <!-- SIDE MENU BAR -->
-<aside class="app-sidebar">
-    <div id="kt_app_sidebar" class="app-sidebar flex-column " data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-         <div class="app-sidebar__logo">
-            <a class="header-brand" href="{{url('/')}}">
+    <div id="kt_app_sidebar" class="app-sidebar flex-column " data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+        <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-8 pb-2" id="kt_app_sidebar_header">
+            <!--begin::Logo-->
+            <a href="https://www.vira.vn/" class="app-sidebar-logo">
                 <img src="{{URL::asset('img/brand/logo.png')}}" class="header-brand-img desktop-lgo" alt="Admintro logo">
                 <img src="{{URL::asset('img/brand/favicon.png')}}" class="header-brand-img mobile-logo" alt="Admintro logo">
+
             </a>
+            <!--end::Logo-->
+            <!--begin::Sidebar toggle-->
+            <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-sm btn-icon bg-light btn-color-gray-700 btn-active-color-primary d-none d-lg-flex rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+                <i class="ki-outline ki-text-align-right rotate-180 fs-1"></i>
+            </div>
+            <!--end::Sidebar toggle-->
         </div>
 
         <!--begin::Separator-->
+            <div class="app-sidebar-separator separator"></div>
         <!--end::Separator-->
 
         <!--begin::Navs-->
-        <div class="app-sidebar-navs flex-column-fluid py-6 side-menu app-sidebar3" id="kt_app_sidebar_navs">
-            <div id="kt_app_sidebar_navs_wrappers" class="app-sidebar-wrapper hover-scroll-y " data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_header" data-kt-scroll-wrappers="#kt_app_sidebar_navs" data-kt-scroll-offset="1px">
+        <div class="app-sidebar-navs flex-column-fluid py-6 app-sidebar3" id="kt_app_sidebar_navs">
+            <div id="kt_app_sidebar_navs_wrappers" class="app-sidebar-wrapper hover-scroll-y " data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_header" data-kt-scroll-wrappers="#kt_app_sidebar_navs" data-kt-scroll-offset="5px">
                 <!--begin::Teams-->
                      <!--begin::Heading Admin Dashboard-->
-                    <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
+                        <div class="app-sidebar-menu-secondary menu menu-rounded menu-column">
+                        
                         <div class="menu-item mb-2">
-                            <li class=" side-item side-item-category menu-heading text-uppercase fs-7 fw-bold">{{ __('Admin Dashboard') }}</li>
+                            <li class="side-item side-item-category menu-heading text-uppercase fs-7 fw-bold">{{ __('Admin Dashboard') }}</li>
                         </div>
 
                         <!--begin:Menu item Dashboard-->
@@ -46,7 +55,7 @@
                         <!--end::Heading-->
 
                         <!--begin:Menu item TTS Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion slide">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -1078,7 +1087,6 @@
         </div>
         <!--end::Navs-->
     </div>
-</aside>
 <!-- END SIDE MENU BAR 
 
 

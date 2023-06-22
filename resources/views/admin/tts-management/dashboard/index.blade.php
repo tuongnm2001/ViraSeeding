@@ -2,7 +2,7 @@
 
 @section('page-header')
 	<!--PAGE HEADER -->
-	{{-- <div class="page-header mt-5-7">
+	<div class="page-header mt-5-7">
 		<div class="page-leftheader">
 			<h4 class="page-title mb-0">{{ __('TTS Dashboard') }}</h4>
 			<ol class="breadcrumb mb-2">
@@ -10,43 +10,6 @@
 				<li class="breadcrumb-item" aria-current="page"><a href="{{url('/' . $page='#')}}"> {{ __('TTS Management') }}</a></li>
 				<li class="breadcrumb-item active" aria-current="page"><a href="{{url('/' . $page='#')}}"> {{ __('TTS Dashboard') }}</a></li>
 			</ol>
-		</div>
-	</div> --}}
-
-	<div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10 mb-12">
-		<div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-			<div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
-				<div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
-                    <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0 mb-3">{{ __('Admin Dashboard') }}</h1>
-
-					<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
-						<!--begin::Item-->
-						<i class="fa fa-th-large mr-2 fs-12"></i>  &nbsp;
-						<li class="breadcrumb-item text-muted">
-							<a href="{{url('/' . $page='#')}}" class="text-muted text-hover-primary">{{ __('Admin') }}</a>
-						</li>
-						<!--end::Item-->
-						<!--begin::Item-->
-						<li class="breadcrumb-item">
-							<i class="fa-solid fa-angles-right"></i>
-						</li>
-						<!--end::Item-->
-						<!--begin::Item-->
-						<li class="breadcrumb-item text-muted">
-							<a href="{{url('/' . $page='#')}}" class="text-muted text-hover-primary">{{ __('TTS Management') }}</a>
-						</li>
-						<li class="breadcrumb-item">
-							<i class="fa-solid fa-angles-right"></i>
-						</li>
-						<!--end::Item-->
-						<!--begin::Item-->
-						<li class="breadcrumb-item text-muted ">
-							<a href="{{url('/' . $page='#')}}" class="text-success text-hover-primary">{{ __('TTS Dashboard') }}</a>
-						</li>
-
-					</ul>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -57,7 +20,7 @@
 	<!-- TOP CSP BOX INFO -->
 	<div class="row">
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -75,9 +38,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
+		</div>
 
-		<div class="col-xl-3 col-md-6 mb-4">
+		{{-- <div class="col-xl-3 col-md-6 mb-4">
 			<div class="card border-left-primary shadow h-100 py-2">
 				<div class="card-body">
 					
@@ -103,9 +66,9 @@
 
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -123,9 +86,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
+		</div>
 
-		<div class="col-xl-3 col-md-6 mb-4">
+		{{-- <div class="col-xl-3 col-md-6 mb-4">
 			<div class="card border-left-primary shadow h-100 py-2">
 				<div class="card-body">
 					
@@ -151,9 +114,9 @@
 
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -171,9 +134,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
+		</div>
 
-		<div class="col-xl-3 col-md-6 mb-4">
+		{{-- <div class="col-xl-3 col-md-6 mb-4">
 			<div class="card border-left-primary shadow h-100 py-2">
 				<div class="card-body">
 					
@@ -199,9 +162,9 @@
 
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -219,9 +182,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
+		</div>
 
-		<div class="col-xl-3 col-md-6 mb-4">
+		{{-- <div class="col-xl-3 col-md-6 mb-4">
 			<div class="card border-left-primary shadow h-100 py-2">
 				<div class="card-body">
 					
@@ -247,7 +210,7 @@
 
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
 	</div>
 	<!-- END TOP CSP BOX INFO -->
@@ -255,7 +218,7 @@
 	<!-- CSP ANALYSIS & CHARACTER USAGE METRICS -->
 	<div class="row">
 
-		<div class="col-xl-4  col-md-12">
+		<div class="col-xl-4 col-md-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-header">
 					<h3 class="card-title">{{ __('Cloud Vendor TTS Service Usage') }} <span class="text-muted">({{ __('Current Year') }})</span></h3>
@@ -310,7 +273,7 @@
 
 		<div class="col-xl-8 col-md-12">
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-xm-12 mb-6">
+				<div class="col-lg-6 col-md-6 col-xm-12 ">
 					<div class="card overflow-hidden border-0">
 						<div class="card-body">
 							<p class=" mb-3 mt-1 fs-12">{{ __('Free Characters Used') }} <span class="text-muted">({{ __('Current Month') }})</span></p>

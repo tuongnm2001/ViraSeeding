@@ -94,7 +94,7 @@
 												<input type="text" class="form-control border-right-0 browse-file form-control-solid" placeholder="240px by 70px PNG image" readonly>
 												<label class="input-group-btn">
 													<span class="btn btn-success special-btn">
-														Browse1 <input type="file" name="main_logo" style="display: none;">
+														Browse <input type="file" name="main_logo" style="display: none;">
 													</span>
 												</label>
 											</div>

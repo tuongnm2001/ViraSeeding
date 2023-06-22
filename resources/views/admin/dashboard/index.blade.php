@@ -2,41 +2,13 @@
 
 @section('page-header')
 	<!-- PAGE HEADER-->
-	{{-- <div class="page-header mt-5-7">
+	<div class="page-header mt-5-7">
 		<div class="page-leftheader">
 			<h4 class="page-title mb-0">{{ __('Admin Dashboard') }}</h4>
 			<ol class="breadcrumb mb-2">
 				<li class="breadcrumb-item"><a href="{{url('/' . $page='#')}}"><i class="fa fa-th-large mr-2 fs-12"></i>{{ __('Admin') }}</a></li>
 				<li class="breadcrumb-item active" aria-current="page"><a href="{{url('/' . $page='#')}}"> {{ __('Dashboard') }}</a></li>
 			</ol>
-		</div>
-	</div> --}}
-
-    <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10 mb-12">
-		<div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-			<div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
-				<div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
-                    <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0 mb-3">{{ __('Admin Dashboard') }}</h1>
-
-					<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
-						<!--begin::Item-->
-						<i class="fa fa-th-large mr-2 fs-12"></i>  &nbsp;
-						<li class="breadcrumb-item text-muted">
-							<a href="{{url('/' . $page='#')}}" class="text-muted text-hover-primary">{{ __('Admin') }}</a>
-						</li>
-						<!--end::Item-->
-						<!--begin::Item-->
-						<li class="breadcrumb-item">
-							<i class="fa-solid fa-angles-right"></i>
-						</li>
-						<!--end::Item-->
-						<!--begin::Item-->
-						<li class="breadcrumb-item text-muted">
-							<a href="{{url('/' . $page='#')}}" class="text-muted text-hover-primary">{{ __('Dashboard') }}</a>
-						</li>
-					</ul>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -46,7 +18,7 @@
 @section('content')						
 	<!-- TOP BOX INFO -->
 	<div class="row">
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 
@@ -71,42 +43,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12 font-weight-bold">{{ __('Total New Users') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-								<h2 class="mb-0"><span class="number-font fs-20">{{ number_format($total_data_monthly['new_users_current_month'][0]['data']) }}</span><span class="ml-2 text-muted fs-11 data-percentage-change"><span id="users_change"></span> {{ __('this month') }}</span></h2>
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fa-solid fa-building-columns fs-2hx text-gray-600"></i>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<span class="text-muted fs-12 mr-1">{{ __('Last Month') }}</span>
-							<span class="number-font fs-12"><i class="fa fa-chain mr-1 text-success"></i>{{ number_format($total_data_monthly['new_users_past_month'][0]['data']) }}</span>
-						</div>
-						
-						<div class="ml-auto">
-							<span class="text-muted fs-12 mr-1">{{ __('Current Year') }} ({{ __('Total') }})</span>
-							<span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{{ number_format($total_data_yearly['total_new_users'][0]['data']) }}</span>
-						</div>
-					</div>
-
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -128,40 +67,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12 font-weight-bold">{{ __('Total New Subscribers') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-								<h2 class="mb-0"><span class="number-font fs-20">{{ number_format($total_data_monthly['new_subscribers_current_month'][0]['data']) }}</span><span class="ml-2 text-muted fs-11 data-percentage-change"><span id="subscribers_change"></span> {{ __('this month') }}</span></h2>
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fa-solid fa-building-columns fs-2hx text-gray-600"></i>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<span class="text-muted fs-12 mr-1">{{ __('Last Month') }}</span>
-							<span class="number-font fs-12"><i class="fa fa-chain mr-1 text-success"></i>{{ number_format($total_data_monthly['new_subscribers_past_month'][0]['data']) }}</span>
-						</div>
-						<div class="ml-auto">
-							<span class="text-muted fs-12 mr-1">{{ __('Current Year') }} ({{ __('Total') }})</span>
-							<span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{{ number_format($total_data_yearly['total_new_subscribers'][0]['data']) }}</span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -183,40 +91,9 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12 font-weight-bold">{{ __('Total Income') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-								<h2 class="mb-0"><span class="number-font fs-20">{!! config('payment.default_system_currency_symbol') !!}{{ number_format((float)$total_data_monthly['income_current_month'][0]['data'], 2, '.', '') }}</span><span class="ml-2 text-muted fs-11 data-percentage-change"><span id="income_change"></span> {{ __('this month') }}</span></h2>
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fa-solid fa-building-columns fs-2hx text-gray-600"></i>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<span class="text-muted fs-12 mr-1">{{ __('Last Month') }}</span>
-							<span class="number-font fs-12"><i class="fa fa-chain mr-1 text-success"></i>{{ number_format($total_data_monthly['new_subscribers_past_month'][0]['data']) }}</span>
-						</div>
-						<div class="ml-auto">
-							<span class="text-muted fs-12 mr-1">{{ __('Current Year') }} ({{ __('Total') }})</span>
-							<span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{{ number_format($total_data_yearly['total_new_subscribers'][0]['data']) }}</span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -238,40 +115,10 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12 font-weight-bold">{{ __('Total Estimated Spending') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-							<h2 class="mb-0"><span class="number-font fs-20">${{ number_format((float)$total_data_monthly['spending_current_month'], 2, '.', '') }}</span><span class="ml-2 text-muted fs-11 data-percentage-change"><span id="spending_change"></span> {{ __('this month') }}</span></h2>
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fa-solid fa-building-columns fs-2hx text-gray-600"></i>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<span class="text-muted fs-12 mr-1">{{ __('Last Month') }}</span>
-							<span class="number-font fs-12"><i class="fa fa-chain mr-1 text-success"></i>{{ number_format($total_data_monthly['new_subscribers_past_month'][0]['data']) }}</span>
-						</div>
-						<div class="ml-auto">
-							<span class="text-muted fs-12 mr-1">{{ __('Current Year') }} ({{ __('Total') }})</span>
-							<span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{{ number_format($total_data_yearly['total_new_subscribers'][0]['data']) }}</span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<p class=" mb-3 fs-12">{{ __('Free Characters Used') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
@@ -280,33 +127,10 @@
 					<span class="fs-12" id="free_chars"></span>
 				</div>									
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12">{{ __('Free Characters Used') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-							<h2 class="mb-2 number-font fs-20">{{ number_format($total_data_monthly['free_chars'][0]['data']) }}</h2>
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<small class="fs-12 text-muted">{{ __('Compared to Last Month') }} (<span id="free_chars_past"></span>): </small>
-							<span class="fs-12" id="free_chars"></span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<p class=" mb-3 fs-12">{{ __('Paid Characters Used') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
@@ -315,33 +139,9 @@
 					<span class="fs-12" id="paid_chars"></span>
 				</div>
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12">{{ __('Paid Characters Used') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-							<h2 class="mb-2 number-font fs-20">{{ number_format($total_data_monthly['paid_chars'][0]['data']) }}</h2>
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<small class="fs-12 text-muted">{{ __('Compared to Last Month') }} (<span id="paid_chars_past"></span>): </small>
-							<span class="fs-12" id="paid_chars"></span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<p class=" mb-3 fs-12">{{ __('Purchased Characters') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
@@ -350,63 +150,15 @@
 					<span class="fs-12" id="purchased_chars"></span>
 				</div>
 			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12">{{ __('Purchased Characters') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-							<h2 class="mb-2 number-font fs-20">{{ number_format($total_data_monthly['purchased_chars'][0]['data']) }}</h2>
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<small class="fs-12 text-muted">{{ __('Compared to Last Month') }} (<span id="purchased_chars_past"></span>): </small>
-							<span class="fs-12" id="purchased_chars"></span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<p class=" mb-3 fs-12">{{ __('Synthesized Audio Results') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
 					<h2 class="mb-2 number-font fs-20">{{ number_format($total_data_monthly['audio_files'][0]['data']) }}</h2>
 					<small class="fs-12 text-muted">{{ __('Compared to Last Month') }} (<span id="audio_files_past"></span>): </small>
 					<span class="fs-12" id="audio_files"></span>
-				</div>
-			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12">{{ __('Synthesized Audio Results') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-								<h2 class="mb-2 number-font fs-20">{{ number_format($total_data_monthly['audio_files'][0]['data']) }}</h2>	
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							<small class="fs-12 text-muted">{{ __('Compared to Last Month') }} (<span id="audio_files_past"></span>): </small>
-					<span class="fs-12" id="audio_files"></span>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

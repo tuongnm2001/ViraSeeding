@@ -94,7 +94,8 @@
 		<!--end::Global Stylesheets Bundle-->
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>		
 		
-		{{-- @include('layouts.header') --}}
+		@include('layouts.header')
+		
 	</head>
 
 	<!--end::Head-->
@@ -120,16 +121,14 @@
 
 					<!--begin::Main-->
 					<div class="page">
-						<div class="page-main" style="padding: 20px 2rem 0 2rem; margin-top: -110px ">
+						<div  style="padding: 20px 2rem 0 2rem">
 							@include('layouts.nav-aside')
-							<div class="app-content main-content">
-								<div class="side-app">
+							<div class="app-content main-content app-page flex-column flex-column-fluid" id="kt_app_page">
 									@include('layouts.nav-top')
 									@include('layouts.flash')
 
 									@yield('page-header')
 									@yield('content')
-								</div>
 							</div>
 							@include('layouts.footer')                			
 						</div>

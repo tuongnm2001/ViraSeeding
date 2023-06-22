@@ -2,16 +2,16 @@
 
 @section('page-header')
 	<!-- PAGE HEADER-->
-	<div class="page-header mt-5-7">
-		<div class="page-leftheader">
-			<h4 class="page-title mb-0">{{ __('Finance Dashboard') }}</h4>
-			<ol class="breadcrumb mb-2">
-				<li class="breadcrumb-item"><a href="{{url('#')}}"><i class="fa fa-google-wallet mr-2 fs-12"></i>{{ __('Admin') }}</a></li>
-				<li class="breadcrumb-item" aria-current="page"><a href="{{url('#')}}"> {{ __('Finance Management') }}</a></li>
-				<li class="breadcrumb-item active" aria-current="page"><a href="{{url('#')}}"> {{ __('Finance Dashboard') }}</a></li>
-			</ol>
+		<div class="page-header mt-5-7">
+			<div class="page-leftheader">
+				<h4 class="page-title mb-0">{{ __('Finance Dashboard') }}</h4>
+				<ol class="breadcrumb mb-2">
+					<li class="breadcrumb-item"><a href="{{url('#')}}"><i class="fa fa-google-wallet mr-2 fs-12"></i>{{ __('Admin') }}</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a href="{{url('#')}}"> {{ __('Finance Management') }}</a></li>
+					<li class="breadcrumb-item active" aria-current="page"><a href="{{url('#')}}"> {{ __('Finance Dashboard') }}</a></li>
+				</ol>
+			</div>
 		</div>
-	</div>
 	<!--END PAGE HEADER -->
 @endsection
 
@@ -19,7 +19,7 @@
 	<!-- TOP BOX INFO -->
 	<div class="row">	
 
-		{{-- <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-body">
 					<div class="d-flex align-items-end justify-content-between">
@@ -39,39 +39,6 @@
 							<span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{!! config('payment.default_system_currency_symbol') !!}{{ number_format((float)$total_data_yearly['total_income'][0]['data'], 2, '.', '') }}</span>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div> --}}
-
-		<div class="col-xl-3 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2">
-				<div class="card-body">
-					
-					<div class="d-flex align-items-end justify-content-between">
-						<div class="col mr-2">
-							<p class=" mb-3 fs-12 font-weight-bold">{{ __('Total Income') }} <span class="text-muted">({{ __('Current Month') }})</span></p>
-
-							<div class="h5 mb-0 font-weight-bold ">
-								{{-- <h2 class="mb-0"><span class="number-font fs-20">{{ number_format($total_data_monthly['new_users_current_month'][0]['data']) }}</span><span class="ml-2 text-muted fs-11 data-percentage-change"><span id="users_change"></span> {{ __('this month') }}</span></h2> --}}
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fa-solid fa-building-columns fs-2hx text-gray-600"></i>
-						</div>
-					</div>
-
-					<div class="d-flex mt-2">
-						<div>
-							{{-- <span class="text-muted fs-12 mr-1">{{ __('Last Month') }}</span> --}}
-							{{-- <span class="number-font fs-12"><i class="fa fa-chain mr-1 text-success"></i>{{ number_format($total_data_monthly['new_users_past_month'][0]['data']) }}</span> --}}
-						</div>
-						
-						<div class="ml-auto">
-							{{-- <span class="text-muted fs-12 mr-1">{{ __('Current Year') }} ({{ __('Total') }})</span> --}}
-							{{-- <span class="number-font fs-12"><i class="fa fa-bookmark mr-1 text-success"></i>{{ number_format($total_data_yearly['total_new_users'][0]['data']) }}</span> --}}
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
