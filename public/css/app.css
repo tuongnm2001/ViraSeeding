@@ -21857,7 +21857,7 @@ body *::-webkit-scrollbar-track {
 .header {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  background: #fff;
+  background: red;
 }
 
 body.fixed-header .header {

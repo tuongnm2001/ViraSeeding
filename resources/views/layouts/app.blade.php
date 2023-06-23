@@ -95,7 +95,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>		
 		
 		@include('layouts.header')
-		
 	</head>
 
 	<!--end::Head-->

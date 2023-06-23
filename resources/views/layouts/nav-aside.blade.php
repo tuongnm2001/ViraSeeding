@@ -1,6 +1,6 @@
 <!-- SIDE MENU BAR -->
-    <div id="kt_app_sidebar" class="app-sidebar flex-column " data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-        <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-8 pb-2" id="kt_app_sidebar_header">
+    <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+        <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-6 pb-2" id="kt_app_sidebar_header">
             <!--begin::Logo-->
             <a href="https://www.vira.vn/" class="app-sidebar-logo">
                 <img src="{{URL::asset('img/brand/logo.png')}}" class="header-brand-img desktop-lgo" alt="Admintro logo">
@@ -8,6 +8,7 @@
 
             </a>
             <!--end::Logo-->
+
             <!--begin::Sidebar toggle-->
             <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-sm btn-icon bg-light btn-color-gray-700 btn-active-color-primary d-none d-lg-flex rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
                 <i class="ki-outline ki-text-align-right rotate-180 fs-1"></i>
@@ -55,7 +56,7 @@
                         <!--end::Heading-->
 
                         <!--begin:Menu item TTS Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion slide">
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
