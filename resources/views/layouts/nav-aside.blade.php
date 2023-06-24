@@ -1,4 +1,5 @@
 <!-- SIDE MENU BAR -->
+<aside class="app-sidebar">
     <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
         <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-6 pb-2" id="kt_app_sidebar_header">
             <!--begin::Logo-->
@@ -21,10 +22,10 @@
         <!--end::Separator-->
 
         <!--begin::Navs-->
-        <div class="app-sidebar-navs flex-column-fluid py-6 app-sidebar3" id="kt_app_sidebar_navs">
-            <div id="kt_app_sidebar_navs_wrappers" class="app-sidebar-wrapper hover-scroll-y " data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_header" data-kt-scroll-wrappers="#kt_app_sidebar_navs" data-kt-scroll-offset="5px">
+        <div class="app-sidebar-navs flex-column-fluid py-6 " id="kt_app_sidebar_navs">
+            <div id="kt_app_sidebar_navs_wrappers" class="app-sidebar-wrapper hover-scroll-y " data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_header" data-kt-scroll-wrappers="#kt_app_sidebar_navs" data-kt-scroll-offset="1px">
                 <!--begin::Teams-->
-                     <!--begin::Heading Admin Dashboard-->
+                        <!--begin::Heading Admin Dashboard-->
                         <div class="app-sidebar-menu-secondary menu menu-rounded menu-column">
                         
                         <div class="menu-item mb-2">
@@ -43,7 +44,7 @@
                             <!--end:Menu link-->
                         </li>
                     <!--end:Menu item-->
-                    <div class="app-sidebar-separator separator"></div>
+                        <div class="app-sidebar-separator separator"></div>
                     </div>
                 <!--end::Teams-->
                 <!--begin::Sidebar menu-->
@@ -67,65 +68,67 @@
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub TTS Dashboard-->
-                                <div class="menu-sub menu-sub-accordion">
                                     <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                        <div class="menu-item ">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('admin.tts.dashboard') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('TTS Dashboard') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->      
-                                    </div>
-                                    <!--end:Menu item-->
-                                </div>
-                                <!--end:Menu sub-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                            {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                                <div class="menu-item ">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link" href="{{ route('admin.tts.dashboard') }}">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">{{ __('TTS Dashboard') }}</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                            {{-- </div> --}}
+                                        {{-- </div> --}}
+                                            <!--end:Menu item-->      
+                                        <!--end:Menu item-->
+                                    <!--end:Menu sub-->
 
-                                <!--begin:Menu sub Synthesized TTS Results-->
-                                <div class="menu-sub menu-sub-accordion">
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                        <div class="menu-item ">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('admin.tts.results') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('Synthesized TTS Results') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->      
-                                    </div>
-                                    <!--end:Menu item-->
-                                </div>
-                                <!--end:Menu sub-->
+                                    <!--begin:Menu sub Synthesized TTS Results-->
+                                        <!--begin:Menu item-->
+                                        {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                            {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                                <div class="menu-item ">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link" href="{{ route('admin.tts.results') }}">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">{{ __('Synthesized TTS Results') }}</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                            {{-- </div> --}}
+                                        {{-- </div> --}}
+                                            <!--end:Menu item-->      
+                                        <!--end:Menu item-->
+                                    <!--end:Menu sub-->
 
-                                <!--begin:Menu sub TTS Configuration-->
-                                <div class="menu-sub menu-sub-accordion">
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                        <div class="menu-item ">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('admin.tts.configs') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('TTS Configuration') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->      
+                                    <!--begin:Menu sub TTS Configuration-->
+                                        <!--begin:Menu item-->
+                                        {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                            {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                                <div class="menu-item ">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link" href="{{ route('admin.tts.configs') }}">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">{{ __('TTS Configuration') }}</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                <!--end:Menu item-->      
+                                                </div>
+                                            {{-- </div> --}}
+                                        {{-- </div> --}}
                                     </div>
                                     <!--end:Menu item-->
-                                </div>
-                                <!--end:Menu sub-->
                             </li>
+                        <!--end:Menu sub-->
+                            
                         <!--end:Menu item-->
 
                         <!--begin:Menu item User Management-->
@@ -160,43 +163,43 @@
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub User List-->
-                                <div class="menu-sub menu-sub-accordion">
-                                    <!--begin:Menu item -->
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                        <div class="menu-item ">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('admin.user.list') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('User List') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <!--begin:Menu item -->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <div class="menu-item ">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" href="{{ route('admin.user.list') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('User List') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->      
                                         </div>
-                                        <!--end:Menu item-->      
+                                        <!--end:Menu item-->
                                     </div>
-                                    <!--end:Menu item-->
-                                </div>
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub Activity Monitoring-->
-                                <div class="menu-sub menu-sub-accordion">
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                        <div class="menu-item ">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('admin.user.activity') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('Activity Monitoring') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <div class="menu-item ">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" href="{{ route('admin.user.activity') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('Activity Monitoring') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->      
                                         </div>
-                                        <!--end:Menu item-->      
+                                        <!--end:Menu item-->
                                     </div>
-                                    <!--end:Menu item-->
-                                </div>
                                 <!--end:Menu sub-->
                             </li>
                         <!--end:Menu item-->
@@ -703,10 +706,7 @@
                 @endrole
                 <!--begin::Heading User Panel-->
                     <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary">
-                        <li class="menu-item mb-2">
-                            {{-- <div class="menu-heading text-uppercase fs-7 fw-bold">User Panel</div> --}}
                             <li class=" side-item side-item-category menu-heading text-uppercase fs-7 fw-bold">{{ __('User Panel') }}</li>
-                        </li>
                         <!--end::Heading-->
 
                         <!--begin:Menu item Text-to-Speech-->
@@ -1088,6 +1088,7 @@
         </div>
         <!--end::Navs-->
     </div>
+</aside>
 <!-- END SIDE MENU BAR 
 
 

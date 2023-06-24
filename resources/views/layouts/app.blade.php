@@ -80,12 +80,14 @@
 		<link rel="shortcut icon" href="{{ asset('/assets/media/logos/vira-favicon.png') }}" />
 		
 		<!--Sidemenu css -->
-		<link href="{{URL::asset('css/sidemenu.css')}}" rel="stylesheet">
+		{{-- <link href="{{URL::asset('css/sidemenu.css')}}" rel="stylesheet"> --}}
 		
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Vendor Stylesheets(used for this page only)-->
+		<link href="{{ URL::asset('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+
 		<link href="{{ URL::asset('/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<!--end::Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
@@ -99,7 +101,10 @@
 
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body class="app sidebar-mini" id="kt_app_body" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" >
+	<body id="kt_app_body" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true"
+	data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
+	data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
+	data-kt-app-sidebar-push-footer="true" class="app-default" >
 		<!--begin::Theme mode setup on page load-->
 		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if ( localStorage.getItem("data-bs-theme") !== null ) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
 		<!--end::Theme mode setup on page load-->
@@ -145,21 +150,24 @@
 		<script src="{{ URL::asset('/assets/js/scripts.bundle.js') }}"></script> 
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Vendors Javascript(used for this page only)-->
-		<script src="{{ URL::asset('/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+		// <script src="{{ URL::asset('/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
 		<!--end::Vendors Javascript-->
 		<!--begin::Custom Javascript(used for this page only)-->
 		<script src="{{ URL::asset('/assets/js/custom/apps/user-management/users/list/table.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/apps/user-management/users/list/export-users.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/apps/user-management/users/list/add.js') }}"></script>
+
 		<script src="{{ URL::asset('/assets/js/widgets.bundle.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/widgets.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/apps/chat/chat.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
-		<script src="{{ URL::asset('/assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/utilities/modals/users-search.js') }}"></script>
-		@include('layouts.footer-scripts')        
-
 		
+		// <script src="{{ URL::asset('/assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
+		// <script src="{{ URL::asset('/assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
+		// <script src="{{ URL::asset('/assets/js/custom/utilities/modals/users-search.js') }}"></script>
+		@include('layouts.footer-scripts')        
+	
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
