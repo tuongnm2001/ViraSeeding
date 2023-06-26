@@ -27,6 +27,7 @@
 				<div class="card-header">
 					<h3 class="card-title">{{ __('Support Request List') }}</h3>
 				</div>
+				
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
 					<table id='allSupportRequestsTable' class="table align-middle table-row-dashed fs-6 gy-5">

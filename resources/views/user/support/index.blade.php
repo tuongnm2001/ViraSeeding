@@ -46,6 +46,7 @@
 									<th width="5%">Actions</th>
 								</tr>
 							</thead>
+							
 						</table> <!-- END SET DATATABLE -->
 					</div> <!-- END BOX CONTENT -->
 				</div>
@@ -53,6 +54,25 @@
 		</div>
 	</div>
 	<!-- END SUPPORT REQUEST DATA TABLE -->
+
+	<select class="form-select" aria-label="Select example">
+		<option>Open this select menu</option>
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
+	<select class="form-select form-select-solid" aria-label="Select example">
+		<option>Open this select menu</option>
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
+	<select class="form-select form-select-transparent" aria-label="Select example">
+		<option>Open this select menu</option>
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
 
 	<!-- MODAL -->
 	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">

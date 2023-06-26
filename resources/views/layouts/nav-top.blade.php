@@ -1,6 +1,7 @@
 <!-- TOP MENU BAR -->
 	<!--begin::Header container-->
-        <div style="left: 0px" class="app-header header app-container container-fluid d-flex align-items-stretch flex-stack" id="kt_app_header_container">
+    <div class="app-header header">
+        <div class=" app-container container-fluid d-flex align-items-stretch flex-stack" id="kt_app_header_container">
            
             <!--begin::Sidebar toggle-->
             <div class="align-items-center d-block d-lg-none ms-n3" title="Show sidebar menu">
@@ -18,7 +19,7 @@
             
             <div class="app-navbar flex-lg-grow-1" id="kt_app_header_navbar">
                     <!--begin::Search-->
-                    <div id="search-bar" style="margin-left: 280px">                        
+                    <div id="search-bar">                        
                         <a class="nav-link icon">
                             <form id="search-field" action="{{ route('search') }}" method="POST" enctype="multipart/form-data">         
                                 @csrf                   
@@ -215,6 +216,8 @@
             </div>
             <!--end::Navbar-->
         </div>
+    </div>
+    
     <!--end::Header container-->
 
 <!-- END TOP MENU BAR -->

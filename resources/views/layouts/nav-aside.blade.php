@@ -1,11 +1,9 @@
 <!-- SIDE MENU BAR -->
-<aside class="app-sidebar">
     <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-        <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-6 pb-2" id="kt_app_sidebar_header">
+        <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-6 pb-2" id="kt_app_sidebar_navs">
             <!--begin::Logo-->
             <a href="https://www.vira.vn/" class="app-sidebar-logo">
                 <img src="{{URL::asset('img/brand/logo.png')}}" class="header-brand-img desktop-lgo" alt="Admintro logo">
-                <img src="{{URL::asset('img/brand/favicon.png')}}" class="header-brand-img mobile-logo" alt="Admintro logo">
 
             </a>
             <!--end::Logo-->
@@ -57,60 +55,58 @@
                         <!--end::Heading-->
 
                         <!--begin:Menu item TTS Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion show">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
                                         <i class="side-menu__icon enlarge lead-3 fa fa-magic fs-2"></i>
                                     </span>
-                                    <span class="menu-title">{{ __('TTS Management') }}</span>
+                                    <span class="menu-title side-menu__item">{{ __('TTS Management') }}</span>
                                     <span class="menu-arrow"></span>
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub TTS Dashboard-->
                                     <!--begin:Menu item-->
                                     <div class="menu-sub menu-sub-accordion">
-                                            {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
-                                                <div class="menu-item ">
-                                                    <!--begin:Menu link-->
-                                                    <a class="menu-link" href="{{ route('admin.tts.dashboard') }}">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span>
-                                                        <span class="menu-title">{{ __('TTS Dashboard') }}</span>
-                                                    </a>
-                                                    <!--end:Menu link-->
-                                                </div>
-                                            {{-- </div> --}}
-                                        {{-- </div> --}}
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <div class="menu-item ">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link " href="{{ route('admin.tts.dashboard') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('TTS Dashboard') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                        </div>
+                                    </div>
                                             <!--end:Menu item-->      
-                                        <!--end:Menu item-->
                                     <!--end:Menu sub-->
 
                                     <!--begin:Menu sub Synthesized TTS Results-->
-                                        <!--begin:Menu item-->
-                                        {{-- <div class="menu-sub menu-sub-accordion"> --}}
-                                            {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
-                                                <div class="menu-item ">
-                                                    <!--begin:Menu link-->
-                                                    <a class="menu-link" href="{{ route('admin.tts.results') }}">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span>
-                                                        <span class="menu-title">{{ __('Synthesized TTS Results') }}</span>
-                                                    </a>
-                                                    <!--end:Menu link-->
-                                                </div>
-                                            {{-- </div> --}}
-                                        {{-- </div> --}}
-                                            <!--end:Menu item-->      
-                                        <!--end:Menu item-->
-                                    <!--end:Menu sub-->
+                                    <!--begin:Menu item-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <div class="menu-item ">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" href="{{ route('admin.tts.results') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('Synthesized TTS Results') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                        </div>
+                                        </div>
+                                    </div>
+                                        <!--end:Menu item-->      
+                                    <!--end:Menu item-->
 
                                     <!--begin:Menu sub TTS Configuration-->
                                         <!--begin:Menu item-->
-                                        {{-- <div class="menu-sub menu-sub-accordion"> --}}
-                                            {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                                 <div class="menu-item ">
                                                     <!--begin:Menu link-->
                                                     <a class="menu-link" href="{{ route('admin.tts.configs') }}">
@@ -122,10 +118,10 @@
                                                     <!--end:Menu link-->
                                                 <!--end:Menu item-->      
                                                 </div>
-                                            {{-- </div> --}}
-                                        {{-- </div> --}}
-                                    </div>
+                                            </div>
+                                        </div>
                                     <!--end:Menu item-->
+
                             </li>
                         <!--end:Menu sub-->
                             
@@ -1088,7 +1084,6 @@
         </div>
         <!--end::Navs-->
     </div>
-</aside>
 <!-- END SIDE MENU BAR 
 
 

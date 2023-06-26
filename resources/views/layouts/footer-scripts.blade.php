@@ -1,7 +1,6 @@
 <!-- Back to top -->
 <div class="scrolltop" id="kt_scrolltop" data-kt-scrolltop="true">
     <i class="ki-outline ki-arrow-up"></i>
-
 </div>
 
 <!-- Jquery js-->
@@ -93,5 +92,5 @@
         }                  
         
     });
-
+    
 </script>
