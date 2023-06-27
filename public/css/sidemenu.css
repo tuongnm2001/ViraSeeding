@@ -180,7 +180,7 @@
 }
 .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
   text-decoration: none;
-  color: #007BFF;
+  color: #dc8f2c;
 }
 
 /*@media (max-width: 360px) {

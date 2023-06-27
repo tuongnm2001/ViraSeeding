@@ -7,8 +7,6 @@
 <!-- P-scroll bar css-->
 <link href="{{URL::asset('plugins/p-scrollbar/p-scrollbar.css')}}" rel="stylesheet" />
 
-{{-- <!--Sidemenu css -->
-<link href="{{URL::asset('css/sidemenu.css')}}" rel="stylesheet">  --}}
 
 <!---Icons css-->
 <link href="{{URL::asset('css/icons.css')}}" rel="stylesheet" />
@@ -23,8 +21,6 @@
 
 <!-- Color Skin CSS -->
 <link href="{{URL::asset('css/color.css')}}" rel="stylesheet" />
-
-
 
 
 

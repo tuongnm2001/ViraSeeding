@@ -1,4 +1,5 @@
 <!-- SIDE MENU BAR -->
+
     <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
         <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-6 pb-2" id="kt_app_sidebar_navs">
             <!--begin::Logo-->
@@ -55,76 +56,74 @@
                         <!--end::Heading-->
 
                         <!--begin:Menu item TTS Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion show">
+                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
                                         <i class="side-menu__icon enlarge lead-3 fa fa-magic fs-2"></i>
                                     </span>
-                                    <span class="menu-title side-menu__item">{{ __('TTS Management') }}</span>
+                                    <span class="menu-title">{{ __('TTS Management') }}</span>
                                     <span class="menu-arrow"></span>
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub TTS Dashboard-->
                                     <!--begin:Menu item-->
-                                    <div class="menu-sub menu-sub-accordion">
-                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                            <div class="menu-item ">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link " href="{{ route('admin.tts.dashboard') }}">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                                    <span class="menu-title">{{ __('TTS Dashboard') }}</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
+                                {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                    {{-- <div  class="menu-item menu-accordion"> --}}
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link " href="{{ route('admin.tts.dashboard') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('TTS Dashboard') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                    </div>
-                                            <!--end:Menu item-->      
-                                    <!--end:Menu sub-->
-
-                                    <!--begin:Menu sub Synthesized TTS Results-->
-                                    <!--begin:Menu item-->
-                                    <div class="menu-sub menu-sub-accordion">
-                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                            <div class="menu-item ">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="{{ route('admin.tts.results') }}">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                                    <span class="menu-title">{{ __('Synthesized TTS Results') }}</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                        </div>
-                                        </div>
-                                    </div>
+                                    {{-- </div> --}}
+                                {{-- </div> --}}
                                         <!--end:Menu item-->      
-                                    <!--end:Menu item-->
+                                <!--end:Menu sub-->
 
-                                    <!--begin:Menu sub TTS Configuration-->
-                                        <!--begin:Menu item-->
-                                        <div class="menu-sub menu-sub-accordion">
-                                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                                <div class="menu-item ">
-                                                    <!--begin:Menu link-->
-                                                    <a class="menu-link" href="{{ route('admin.tts.configs') }}">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span>
-                                                        <span class="menu-title">{{ __('TTS Configuration') }}</span>
-                                                    </a>
-                                                    <!--end:Menu link-->
-                                                <!--end:Menu item-->      
-                                                </div>
-                                            </div>
+                                <!--begin:Menu sub Synthesized TTS Results-->
+                                <!--begin:Menu item-->
+                                {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                    {{-- <div  class="menu-item menu-accordion"> --}}
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('admin.tts.results') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('Synthesized TTS Results') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                    <!--end:Menu item-->
+                                    {{-- </div> --}}
+                                {{-- </div> --}}
+                                    <!--end:Menu item-->      
+                                <!--end:Menu item-->
 
-                            </li>
-                        <!--end:Menu sub-->
-                            
+                                <!--begin:Menu sub TTS Configuration-->
+                                    <!--begin:Menu item-->
+                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                        {{-- <div  class="menu-item menu-accordion"> --}}
+                                            <div class="menu-item ">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" href="{{ route('admin.tts.configs') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('TTS Configuration') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            <!--end:Menu item-->      
+                                            </div>
+                                        {{-- </div> --}}
+                                    {{-- </div> --}}
+                                <!--end:Menu item-->
+
+                            </li>                            
                         <!--end:Menu item-->
 
                         <!--begin:Menu item User Management-->
@@ -139,9 +138,9 @@
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub User Dashboard-->
-                                    <div class="menu-sub menu-sub-accordion">
+                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
                                         <!--begin:Menu item -->
-                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
                                                 <a class="menu-link" href="{{ route('admin.user.dashboard') }}">
@@ -153,15 +152,15 @@
                                                 <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->      
-                                        </div>
+                                        {{-- </div> --}}
                                         <!--end:Menu item-->
-                                    </div>
+                                    {{-- </div> --}}
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub User List-->
-                                    <div class="menu-sub menu-sub-accordion">
+                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
                                         <!--begin:Menu item -->
-                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
                                                 <a class="menu-link" href="{{ route('admin.user.list') }}">
@@ -173,15 +172,15 @@
                                                 <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->      
-                                        </div>
+                                        {{-- </div> --}}
                                         <!--end:Menu item-->
-                                    </div>
+                                    {{-- </div> --}}
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub Activity Monitoring-->
-                                    <div class="menu-sub menu-sub-accordion">
+                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
                                         <!--begin:Menu item-->
-                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
                                                 <a class="menu-link" href="{{ route('admin.user.activity') }}">
@@ -193,9 +192,9 @@
                                                 <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->      
-                                        </div>
+                                        {{-- </div> --}}
                                         <!--end:Menu item-->
-                                    </div>
+                                    {{-- </div> --}}
                                 <!--end:Menu sub-->
                             </li>
                         <!--end:Menu item-->

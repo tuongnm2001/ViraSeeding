@@ -79,6 +79,8 @@
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
 		<link rel="shortcut icon" href="{{ asset('/assets/media/logos/vira-favicon.png') }}" />
 
+		<!--Sidemenu css -->
+		{{-- <link href="{{URL::asset('css/sidemenu.css')}}" rel="stylesheet">  --}}
 		
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -96,7 +98,6 @@
 		
 		@include('layouts.header')
 	</head>
-
 	<!--end::Head-->
 	<!--begin::Body-->
 	<body id="kt_app_body" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true"
@@ -184,6 +185,8 @@
 	
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
+	<script src="{{ URL::asset('/assets/js/a.js') }}"></script>		
+	
 	</body>
 	<!--end::Body-->
 </html><
