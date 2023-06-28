@@ -56,7 +56,7 @@
                         <!--end::Heading-->
 
                         <!--begin:Menu item TTS Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ Request::url() === route('admin.tts.dashboard') || Request::url() ===  route('admin.tts.results') || Request::url() ===  route('admin.tts.configs')  ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -67,12 +67,12 @@
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub TTS Dashboard-->
-                                    <!--begin:Menu item-->
-                                {{-- <div class="menu-sub menu-sub-accordion"> --}}
-                                    {{-- <div  class="menu-item menu-accordion"> --}}
-                                        <div class="menu-item">
+                                <!--begin:Menu item-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div class="menu-item menu-accordion">
+                                        <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link " href="{{ route('admin.tts.dashboard') }}">
+                                            <a class="menu-link" href="{{ route('admin.tts.dashboard') }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -80,15 +80,15 @@
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
-                                    {{-- </div> --}}
-                                {{-- </div> --}}
+                                    </div>
+                                </div>
                                         <!--end:Menu item-->      
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub Synthesized TTS Results-->
                                 <!--begin:Menu item-->
-                                {{-- <div class="menu-sub menu-sub-accordion"> --}}
-                                    {{-- <div  class="menu-item menu-accordion"> --}}
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div  class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
                                             <a class="menu-link" href="{{ route('admin.tts.results') }}">
@@ -99,35 +99,33 @@
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
-                                    {{-- </div> --}}
-                                {{-- </div> --}}
+                                    </div>
+                                </div>
                                     <!--end:Menu item-->      
                                 <!--end:Menu item-->
 
                                 <!--begin:Menu sub TTS Configuration-->
-                                    <!--begin:Menu item-->
-                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
-                                        {{-- <div  class="menu-item menu-accordion"> --}}
-                                            <div class="menu-item ">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="{{ route('admin.tts.configs') }}">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                                    <span class="menu-title">{{ __('TTS Configuration') }}</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            <!--end:Menu item-->      
-                                            </div>
-                                        {{-- </div> --}}
-                                    {{-- </div> --}}
-                                <!--end:Menu item-->
-
-                            </li>                            
+                                <!--begin:Menu item-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('admin.tts.configs') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('TTS Configuration') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        <!--end:Menu item-->      
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         <!--end:Menu item-->
 
                         <!--begin:Menu item User Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ Request::url() === route('admin.user.dashboard') || Request::url() ===  route('admin.user.list') || Request::url() ===  route('admin.user.activity')  ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -138,9 +136,9 @@
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub User Dashboard-->
-                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                    <div class="menu-sub menu-sub-accordion">
                                         <!--begin:Menu item -->
-                                        {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
                                                 <a class="menu-link" href="{{ route('admin.user.dashboard') }}">
@@ -152,15 +150,15 @@
                                                 <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->      
-                                        {{-- </div> --}}
+                                        </div>
                                         <!--end:Menu item-->
-                                    {{-- </div> --}}
+                                    </div>
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub User List-->
-                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                    <div class="menu-sub menu-sub-accordion">
                                         <!--begin:Menu item -->
-                                        {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
                                                 <a class="menu-link" href="{{ route('admin.user.list') }}">
@@ -172,15 +170,15 @@
                                                 <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->      
-                                        {{-- </div> --}}
+                                        </div>
                                         <!--end:Menu item-->
-                                    {{-- </div> --}}
+                                    </div>
                                 <!--end:Menu sub-->
 
                                 <!--begin:Menu sub Activity Monitoring-->
-                                    {{-- <div class="menu-sub menu-sub-accordion"> --}}
+                                    <div class="menu-sub menu-sub-accordion">
                                         <!--begin:Menu item-->
-                                        {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion"> --}}
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
                                                 <a class="menu-link" href="{{ route('admin.user.activity') }}">
@@ -192,15 +190,18 @@
                                                 <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->      
-                                        {{-- </div> --}}
+                                        </div>
                                         <!--end:Menu item-->
-                                    {{-- </div> --}}
+                                    </div>
                                 <!--end:Menu sub-->
                             </li>
                         <!--end:Menu item-->
 
                         <!--begin:Menu item Finance Management-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ 
+                            Request::url() === route('admin.finance.dashboard') || Request::url() ===  route('admin.finance.payments') || Request::url() ===  route('admin.finance.payments.subscriptions') ||
+                            Request::url() === route('admin.finance.subscriptions') || Request::url() ===  route('admin.finance.prepaid') || Request::url() ===  route('admin.finance.promocodes') ||
+                            Request::url() === route('admin.referral.settings') || Request::url() ===  route('admin.referral.payouts') || Request::url() ===  route('admin.finance.settings') ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -402,7 +403,7 @@
                         <!--end:Menu item-->
 
                         <!--begin:Menu item Support Requests-->
-                            <li class="menu-item menu-accordion">
+                            <li class="menu-item menu-accordion" >
                                 <!--begin:Menu link-->  
                                     <a class="menu-link" href="{{route('admin.support') }}">
                                         <span class="menu-icon">
@@ -418,7 +419,7 @@
                         <!--end:Menu item-->
                         
                         <!--begin:Menu item Notifications-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ Request::url() ===  route('admin.notifications') || Request::url() ===  route('admin.notifications.system')  ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -433,10 +434,9 @@
                                 </span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub-->
-                                <div class="menu-sub menu-sub-accordion">
                                     <!--begin:Menu sub User Dashboard-->
+                                    <!--begin:Menu item Mass Notifications -->
                                     <div class="menu-sub menu-sub-accordion">
-                                        <!--begin:Menu item Mass Notifications -->
                                         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
@@ -450,9 +450,13 @@
                                             </div>
                                             <!--end:Menu item-->      
                                         </div>
+                                    </div>
+
                                         <!--end:Menu item-->
 
                                         <!--begin:Menu item Mass Notifications -->
+                                    <div class="menu-sub menu-sub-accordion">
+
                                         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <div class="menu-item ">
                                                 <!--begin:Menu link-->
@@ -471,13 +475,16 @@
                                         </div>
                                         <!--end:Menu item-->
                                     </div>
-                                </div>
                                 <!--end:Menu sub-->
                             </li>
                         <!--end:Menu item-->
 
                         <!--begin:Menu item General Settings-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ 
+                                Request::url() === route('admin.settings.global') || Request::url() ===  route('admin.settings.appearance') || Request::url() ===  route('admin.settings.frontend') ||
+                                Request::url() === route('admin.settings.blog') || Request::url() ===  route('admin.settings.oauth') || Request::url() ===  route('admin.settings.registration') ||
+                                Request::url() === route('admin.settings.smtp') || Request::url() ===  route('admin.settings.invoice') || Request::url() ===  route('admin.settings.backup') || Request::url() ===  route('admin.settings.activation')  ? 'menu-item menu-accordion show' : 'menu-item menu-accordion'
+                            }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -731,7 +738,8 @@
                         <!--end:Menu item-->
 
                         <!--begin:Menu item My Balance-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ Request::url() ===  route('user.subscriptions') || Request::url() ===  route('user.balance.subscriptions') || Request::url() ===  route('user.balance.payments')
+                            || Request::url() ===  route('user.referral') || Request::url() ===  route('user.balance') ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -847,7 +855,8 @@
                         <!--end:Menu item-->
 
                         <!--begin:Menu item Service-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ Request::url() ===  route('user.service.facebook.likepost') || Request::url() ===  route('user.service.facebook.likepage') || Request::url() ===  route('user.service.facebook.follow')
+                            || Request::url() ===  route('user.service.facebook.share') || Request::url() ===  route('user.service.facebook.comment') ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
@@ -975,7 +984,7 @@
                         <!--end:Menu item-->
 
                         <!--begin:Menu item My Profile Settings-->
-                            <li data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                            <li data-kt-menu-trigger="click" class="{{ Request::url() ===  route('user.profile') || Request::url() ===  route('user.password')  ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">

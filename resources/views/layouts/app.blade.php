@@ -1,66 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-	<head>
-		<!-- METADATA -->
-		<meta charset="UTF-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-		<meta content="" name="description">
-		<meta content="" name="author">
-		<meta name="keywords" content=""/>
-		
-        <!-- CSRF TOKEN -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <!-- TITLE -->
-        <title>{{ config('app.name', 'Polly') }}</title>
-        
-        @include('layouts.header')
-
-	</head>
-
-	<body class="app sidebar-mini">
-
-		<!-- LOADER -->
-		<div id="global-loader" >
-			<img src="{{URL::asset('img/svgs/loader.svg')}}" alt="loader">           
-		</div>
-		<!-- END LOADER -->
-
-		<!-- PAGE -->
-		<div class="page">
-			<div class="page-main">
-
-				@include('layouts.nav-aside')
-
-				<!-- APP CONTENT -->			
-				<div class="app-content main-content">
-
-					<div class="side-app">
-
-						@include('layouts.nav-top')
-
-                        @include('layouts.flash')
-
-						@yield('page-header')
-
-						@yield('content')						
-
-                    </div>                   
-                </div>
-                <!-- END APP CONTENT -->
-
-                @include('layouts.footer')                
-
-            </div>		
-        </div>
-		<!-- END PAGE -->
-        
-		@include('layouts.footer-scripts')        
-
-	</body>
-
-</html> --}}
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -166,27 +103,11 @@
 		<script src="{{ URL::asset('/assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
 		<script src="{{ URL::asset('/assets/js/custom/utilities/modals/users-search.js') }}"></script>
 
-
-		<!--begin::Vendors Javascript(used for this page only)-->
-	<script src="{{ URL::asset('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-
 		@include('layouts.footer-scripts')        
 	
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
-	<script src="{{ URL::asset('/assets/js/a.js') }}"></script>		
-	
+		
 	</body>
 	<!--end::Body-->
 </html><
