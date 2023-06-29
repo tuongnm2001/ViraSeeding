@@ -24,6 +24,7 @@
 @endsection
 
 @section('content')
+<h2>{{ $title }}</h2>
 	<div class="row">
 		<div class="col-lg-9 col-md-6 col-xm-12">
 			<div class="card border-0">

@@ -2,49 +2,50 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminTTSController;
-use App\Http\Controllers\Admin\TTSConfigController;
-use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\Admin\FinanceController;
-use App\Http\Controllers\Admin\FinanceSubscriptionController;
-use App\Http\Controllers\Admin\FinancePrepaidController;
-use App\Http\Controllers\Admin\FinancePromocodeController;
-use App\Http\Controllers\Admin\ReferralSystemController;
-use App\Http\Controllers\Admin\FinanceSettingController;
-use App\Http\Controllers\Admin\PaypalWebhookController;
-use App\Http\Controllers\Admin\StripeWebhookController;
-use App\Http\Controllers\Admin\SupportController;
-use App\Http\Controllers\Admin\NotificationController;
-use App\Http\Controllers\Admin\InstallController;
-use App\Http\Controllers\Admin\UpdateController;
-use App\Http\Controllers\Admin\Settings\GlobalController;
-use App\Http\Controllers\Admin\Settings\BackupController;
-use App\Http\Controllers\Admin\Settings\OAuthController;
-use App\Http\Controllers\Admin\Settings\ActivationController;
-use App\Http\Controllers\Admin\Settings\SMTPController;
-use App\Http\Controllers\Admin\Settings\RegistrationController;
-use App\Http\Controllers\Admin\Settings\InvoiceController;
-use App\Http\Controllers\Admin\Settings\AppearanceController;
-use App\Http\Controllers\Admin\Settings\FrontendController;
-use App\Http\Controllers\Admin\Settings\BlogController;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\User\UserPasswordController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\User\TTSController;
+use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\User\SearchController;
+use App\Http\Controllers\Admin\UpdateController;
+use App\Http\Controllers\User\BalanceController;
+use App\Http\Controllers\User\PaymentController;
+use App\Http\Controllers\User\ServiceController;
+use App\Http\Controllers\Admin\FinanceController;
+use App\Http\Controllers\Admin\InstallController;
+use App\Http\Controllers\Admin\SupportController;
+use App\Http\Controllers\User\FacebookController;
+use App\Http\Controllers\User\ReferralController;
+use App\Http\Controllers\Admin\AdminTTSController;
+use App\Http\Controllers\User\PromocodeController;
 use App\Http\Controllers\User\TTSResultController;
 use App\Http\Controllers\User\TTSVoicesController;
-use App\Http\Controllers\User\BalanceController;
-use App\Http\Controllers\User\SubscriptionController;
-use App\Http\Controllers\User\PromocodeController;
-use App\Http\Controllers\User\PaymentController;
-use App\Http\Controllers\User\ReferralController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\TTSConfigController;
 use App\Http\Controllers\User\UserSupportController;
+use App\Http\Controllers\User\SubscriptionController;
+use App\Http\Controllers\User\UserPasswordController;
+use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\PaypalWebhookController;
+use App\Http\Controllers\Admin\Settings\BlogController;
+use App\Http\Controllers\Admin\Settings\SMTPController;
+use App\Http\Controllers\Admin\StripeWebhookController;
+use App\Http\Controllers\Admin\FinancePrepaidController;
+use App\Http\Controllers\Admin\FinanceSettingController;
+use App\Http\Controllers\Admin\ReferralSystemController;
+use App\Http\Controllers\Admin\Settings\OAuthController;
+use App\Http\Controllers\Admin\Settings\BackupController;
+use App\Http\Controllers\Admin\Settings\GlobalController;
 use App\Http\Controllers\User\UserNotificationController;
-use App\Http\Controllers\User\SearchController;
-use App\Http\Controllers\User\FacebookController;
-use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Admin\FinancePromocodeController;
+use App\Http\Controllers\Admin\Settings\InvoiceController;
+use App\Http\Controllers\Admin\Settings\FrontendController;
+use App\Http\Controllers\Admin\FinanceSubscriptionController;
+use App\Http\Controllers\Admin\Settings\ActivationController;
+use App\Http\Controllers\Admin\Settings\AppearanceController;
+use App\Http\Controllers\Admin\Settings\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -367,7 +368,18 @@ Route::group(['prefix' => 'user', 'middleware' => ['verified', 'role:user|admin|
 
         // USER SEARCH ROUTES
         Route::any('/search', [SearchController::class, 'index'])->name('search');
+
+
+        //SERVICE
+        Route::get('/service/facebook/fblikepost', [ServiceController::class, 'index'])->name('user.service.facebook.fblikepost');
+        Route::get('/service/facebook/fblikepage', [ServiceController::class, 'index'])->name('user.service.facebook.fblikepage');
+        Route::get('/service/facebook/fbfollow', [ServiceController::class, 'index'])->name('user.service.facebook.fbfollow');
+        Route::get('/service/facebook/fbshare', [ServiceController::class, 'index'])->name('user.service.facebook.fbshare');
+        Route::get('/service/facebook/fbcomment', [ServiceController::class, 'index'])->name('user.service.facebook.fbcomment');
+
 });
+
+
 
 
 
