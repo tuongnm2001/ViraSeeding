@@ -1,5 +1,4 @@
 <!-- SIDE MENU BAR -->
-
     <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
         <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-6 pb-2" id="kt_app_sidebar_navs">
             <!--begin::Logo-->
@@ -31,7 +30,7 @@
                         </div>
 
                         <!--begin:Menu item Dashboard-->
-                        <li class="menu-item ">
+                        <li class="menu-item">
                             <!--begin:Menu link-->  
                                 <a class="menu-link" href="{{route('admin.dashboard') }}">
                                     <span class="menu-icon">
@@ -855,7 +854,7 @@
 
                         <!--begin:Menu item Service-->
                             <li data-kt-menu-trigger="click" class="{{ Request::url() ===  route('user.service.facebook.likepost') || Request::url() ===  route('user.service.facebook.likepage') || Request::url() ===  route('user.service.facebook.follow')
-                            || Request::url() ===  route('user.service.facebook.share') || Request::url() ===  route('user.service.facebook.comment') || Request::url() ===  route('user.service.facebook.fblikepost')
+                            || Request::url() ===  route('user.service.facebook.share') || Request::url() ===  route('user.service.facebook.comment') 
                             || Request::url() ===  route('user.service.facebook.fblikepage')|| Request::url() ===  route('user.service.facebook.fbfollow')
                             || Request::url() ===  route('user.service.facebook.fbshare') || Request::url() ===  route('user.service.facebook.fbcomment') ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
@@ -975,12 +974,12 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost') }}">
+                                            {{-- <a class="menu-link" href="{{ route('user.service.facebook.fblikepost') }}"> --}}
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
                                                 <span class="menu-title">{{ __('FB LIKE POST') }}</span>
-                                            </a>
+                                            {{-- </a> --}}
                                             <!--end:Menu link-->
                                         </div>
                                         <!--end:Menu item-->      

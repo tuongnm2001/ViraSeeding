@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\Admin\LicenseController;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Plan;
+use App\Services\FbService;
 use Illuminate\Http\Request;
-use App\Services\Statistics\UserUsageYearlyService;
-use App\Services\Statistics\UserPaymentsService;
-use App\Models\Subscription;
-use App\Models\Payment;
-use DataTables;
+use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller{
-    private $api;
 
-    public function __construct(){
+    protected $fbService ;
 
+    public function __construct(FbService $fbService){
+        $this->fbService = $fbService ;
     }
 
     /**
@@ -24,11 +20,41 @@ class ServiceController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request){
-       return view('user.service.facebook.likepost.viplike',[
-            'title'=>$request->__get('plan_name')
-       ]);
+
+   public function show(Request $request, $id){
+
+      // Lấy giá trị của tham số đường dẫn 'id'
+      $planId = $request->route('id');
+      //  echo $request->route('id');
+
+      // Hoặc có thể lấy trực tiếp giá trị của biến $id
+      // $userId = $id;
+      $data = Plan::find($planId);
+
+      // echo $data ;
+
+      return view('user.service.facebook.likepost.viplike',[
+         'content'=>$data
+      ]);
+      
+   }
+
+   public function listService(Request $request){
+       if ($request->ajax()) {
+            $data = User::latest()->get();
+        }
+
+        return view('user.service.facebook.likepost.viplike');
+   }
+
+    public function index(Request $id){
+      //   $product = $this->fbService->show($id);
+         // dd($product);
+         // dd($id);
+         echo $id;
+         echo '$test';
+      //  return view('layouts.nav-aside',[
+      //       'title'=>$this->fbService->show()
+      //  ]);
     }
-
-
 }

@@ -369,9 +369,11 @@ Route::group(['prefix' => 'user', 'middleware' => ['verified', 'role:user|admin|
         // USER SEARCH ROUTES
         Route::any('/search', [SearchController::class, 'index'])->name('search');
 
-
         //SERVICE
-        Route::get('/service/facebook/fblikepost', [ServiceController::class, 'index'])->name('user.service.facebook.fblikepost');
+        Route::get('/service/{id}/show', [ServiceController::class, 'show'])->name('user.service.facebook.fblikepost');
+        Route::get('/service/list', [ServiceController::class, 'listService'])->name('user.service.list');
+        // Route::get('/users/list', [AdminUserController::class, 'listUsers'])->name('admin.user.list');
+        
         Route::get('/service/facebook/fblikepage', [ServiceController::class, 'index'])->name('user.service.facebook.fblikepage');
         Route::get('/service/facebook/fbfollow', [ServiceController::class, 'index'])->name('user.service.facebook.fbfollow');
         Route::get('/service/facebook/fbshare', [ServiceController::class, 'index'])->name('user.service.facebook.fbshare');

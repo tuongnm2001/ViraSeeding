@@ -24,12 +24,13 @@
 @endsection
 
 @section('content')
-<h2>{{ $title }}</h2>
+
+<h4>{{ $content }}</h4>
 	<div class="row">
 		<div class="col-lg-9 col-md-6 col-xm-12">
 			<div class="card border-0">
 				<div class="card-header">
-					<h3 class="card-title">{{ __('Get likes post') }}</h3>
+					<h3 class="card-title">{{ $content->plan_name }}</h3>
 				</div>
 				<div class="card-body pt-5">
 					<form action="{{ route('admin.finance.prepaid.store') }}" method="POST" enctype="multipart/form-data">
@@ -66,7 +67,7 @@
 							<div class="col-lg-6 col-md-6col-sm-12">
 									<h6>{{ __('Price') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
-										<input type="text" class="form-control form-control-solid" id="cost" name="cost" value="{{ old('cost') }}" required>
+										<input type="text" class="form-control form-control-solid" id="cost" name="cost" value="{{$content->cost }}" required>
 									</div>
 									@error('cost')
 										<p class="text-danger">{{ $errors->first('cost') }}</p>
@@ -143,14 +144,18 @@
 					<table id='myPaymentsTable' class="table align-middle table-row-dashed fs-6 gy-5">
 							<thead>
 								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-									<th width="10%">{{ __('Payment Date') }}</th>											
-									<th width="10%">{{ __('Plan Type') }}</th>
-									<th width="7%">{{ __('Amount') }}</th>																															
-									<th width="10%">{{ __('Paid By') }}</th>
-									<th width="10%">{{ __('Plan Name') }}</th>
-									<th width="7%">{{ __('Characters') }}</th>
+									<th width="15%">{{ __('Plan type') }}</th>											
+									<th width="15%">{{ __('Plan Name') }}</th>
+									<th width="7%">{{ __('Cost') }}</th>																															
+									<th width="10%">{{ __('Currency') }}</th>
 									<th width="10%">{{ __('Status') }}</th>
-									<th width="7%">{{ __('Actions') }}</th>
+									<th width="10%">{{ __('characters') }}</th>
+									<th width="7%">{{ __('Bonus') }}</th>
+									<th width="7%">{{ __('payment_frequency') }}</th>
+									<th width="7%">{{ __('primary_heading') }}</th>
+									<th width="7%">{{ __('secondary_heading') }}</th>
+									<th width="7%">{{ __('plan_features') }}</th>
+									<th width="7%">{{ __('duration_in_days') }}</th>
 								</tr>
 							</thead>
 					</table> <!-- END SET DATATABLE -->
@@ -214,14 +219,14 @@
 				serverSide: true,
 				ajax: "{{ route('user.balance.payments') }}",
 				columns: [{
-						data: 'created-on',
-						name: 'created-on',
+						data: 'plan_type',
+						name: 'plan_type',
 						orderable: true,
 						searchable: true
 					},
 					{
-						data: 'custom-plan-type',
-						name: 'custom-plan-type',
+						data: 'plan_name ',
+						name: 'plan_name ',
 						orderable: true,
 						searchable: true
 					},
