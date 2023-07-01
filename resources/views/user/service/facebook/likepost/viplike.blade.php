@@ -11,7 +11,7 @@
 	<!-- PAGE HEADER -->
 	<div class="page-header mt-5-7">
 		<div class="page-leftheader">
-			<h4 class="page-title mb-0">{{ __('Get Likes Post') }}</h4>
+			<h4 class="page-title mb-0">{{ $content->plan_name }}</h4>
 			<ol class="breadcrumb mb-2">
 				<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-google-wallet mr-2 fs-12"></i>{{ __('Admin') }}</a></li>
 				<li class="breadcrumb-item" aria-current="page"><a href="{{ route('admin.finance.dashboard') }}"> {{ __('Finance Management') }}</a></li>
@@ -24,21 +24,20 @@
 @endsection
 
 @section('content')
-
-<h4>{{ $content }}</h4>
 	<div class="row">
 		<div class="col-lg-9 col-md-6 col-xm-12">
+			<form>
 			<div class="card border-0">
 				<div class="card-header">
 					<h3 class="card-title">{{ $content->plan_name }}</h3>
 				</div>
 				<div class="card-body pt-5">
-					<form action="{{ route('admin.finance.prepaid.store') }}" method="POST" enctype="multipart/form-data">
+					<form action="{{ route('user.service.create') }}">
 						@csrf
 
 						<div class="row">
                             <!-- HEADING -->
-                            <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-12  col-md-12 col-sm-12">
 									<h6>{{ __('URL String') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
 										<input type="text" class="form-control form-control-solid" placeholder="https://www.facebook.com/{uid}" id="urlstring" name="urlstring" value="{{ old('urlstring') }}" required>
@@ -95,10 +94,9 @@
 
 						<!-- ACTION BUTTON -->
 						<div class="border-0 text-right mb-2 mt-1">
-							<a href="{{ route('admin.finance.prepaid') }}" class="btn btn-cancel mr-2">{{ __('Cancel') }}</a>
+							<a href="" class="btn btn-cancel mr-2">{{ __('Cancel') }}</a>
 							<button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
 						</div>
-
 					</form>
 				</div>
 			</div>
@@ -107,7 +105,7 @@
         <div class="col-lg-3 col-md-6 col-xm-12">
 			<div class="card border-0">
 				<div class="card-header">
-					<h3 class="card-title">{{ __('Get likes post') }}</h3>
+					<h3 class="card-title">{{ $content->plan_name }}</h3>
 				</div>
 				<div class="card-body pt-5">
 					<form action="{{ route('admin.finance.prepaid.store') }}" method="POST" enctype="multipart/form-data">
@@ -125,10 +123,7 @@
 								</div>
 							</div>
                             <!-- END HEADING -->
-
 						</div>
-
-
 					</form>
 				</div>
 			</div>
@@ -137,25 +132,21 @@
 		<div class="col-lg-12 col-md-12 col-xm-12">
 			<div class="card overflow-hidden border-0">
 				<div class="card-header">
-					<h3 class="card-title">{{ __('Get likes post') }}</h3>
+					<h3 class="card-title">{{ $content->plan_name }}</h3>
 				</div>
 				<div class="card-body pt-2">
 					<!-- SET DATATABLE -->
-					<table id='myPaymentsTable' class="table align-middle table-row-dashed fs-6 gy-5">
+					<table id='myFbServiceTable' class="table align-middle table-row-dashed fs-6 gy-5">
 							<thead>
 								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-									<th width="15%">{{ __('Plan type') }}</th>											
-									<th width="15%">{{ __('Plan Name') }}</th>
-									<th width="7%">{{ __('Cost') }}</th>																															
-									<th width="10%">{{ __('Currency') }}</th>
-									<th width="10%">{{ __('Status') }}</th>
-									<th width="10%">{{ __('characters') }}</th>
+									<th width="15%">{{ __('user_id') }}</th>											
+									<th width="15%">{{ __('plan_id') }}</th>
+									<th width="7%">{{ __('note') }}</th>																															
+									<th width="10%">{{ __('amount') }}</th>
+									<th width="10%">{{ __('cost') }}</th>
+									<th width="10%">{{ __('result') }}</th>
 									<th width="7%">{{ __('Bonus') }}</th>
-									<th width="7%">{{ __('payment_frequency') }}</th>
-									<th width="7%">{{ __('primary_heading') }}</th>
-									<th width="7%">{{ __('secondary_heading') }}</th>
-									<th width="7%">{{ __('plan_features') }}</th>
-									<th width="7%">{{ __('duration_in_days') }}</th>
+									<th width="7%">{{ __('status') }}</th>
 								</tr>
 							</thead>
 					</table> <!-- END SET DATATABLE -->
@@ -199,7 +190,7 @@
 			"use strict";
 			
 			// INITILIZE DATATABLE
-			var table = $('#myPaymentsTable').DataTable({
+			var table = $('#myFbServiceTable').DataTable({
 				"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
 				responsive: true,
 				colReorder: true,
@@ -217,55 +208,55 @@
 				pagingType : 'full_numbers',
 				processing: true,
 				serverSide: true,
-				ajax: "{{ route('user.balance.payments') }}",
+				ajax: "{{ route('user.service.list',['id'=>$content->id])}}",
 				columns: [{
-						data: 'plan_type',
-						name: 'plan_type',
+						data: 'user_id',
+						name: 'user_id',
 						orderable: true,
 						searchable: true
 					},
 					{
-						data: 'plan_name ',
-						name: 'plan_name ',
+						data: 'plan_id',
+						name: 'plan_id',
 						orderable: true,
 						searchable: true
 					},
 					{
-						data: 'custom-amount',
-						name: 'custom-amount',
+						data: 'note',
+						name: 'note',
 						orderable: true,
 						searchable: true
 					},
 					{
-						data: 'gateway',
-						name: 'gateway',
-						orderable: true,
-						searchable: true
-					},
-					{
-						data: 'plan_name',
-						name: 'plan_name',
+						data: 'amount',
+						name: 'amount',
 						orderable: false,
 						searchable: true
 					},
 					{
-						data: 'custom-chars',
-						name: 'custom-chars',
+						data: 'cost',
+						name: 'cost',
 						orderable: true,
 						searchable: true
 					},						
 					{
-						data: 'custom-status',
-						name: 'custom-status',
+						data: 'result',
+						name: 'result',
 						orderable: true,
 						searchable: true
-					},				
+					},					
 					{
-						data: 'actions',
-						name: 'actions',
-						orderable: false,
-						searchable: false
-					},
+						data: 'bonus',
+						name: 'bonus',
+						orderable: true,
+						searchable: true
+					},						
+					{
+						data: 'status',
+						name: 'status',
+						orderable: true,
+						searchable: true
+					}
 				]
 			});
 

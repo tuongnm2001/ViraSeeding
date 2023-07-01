@@ -42,6 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'referral_bank_requisites',
     ];
 
+    
     /**
      * The attributes that should be hidden for arrays.
      *

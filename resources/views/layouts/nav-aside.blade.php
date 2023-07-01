@@ -855,10 +855,9 @@
                         <!--begin:Menu item Service-->
                             <li data-kt-menu-trigger="click" class="{{ Request::url() ===  route('user.service.facebook.likepost') || Request::url() ===  route('user.service.facebook.likepage') || Request::url() ===  route('user.service.facebook.follow')
                             || Request::url() ===  route('user.service.facebook.share') || Request::url() ===  route('user.service.facebook.comment') 
-                            || Request::url() ===  route('user.service.facebook.fblikepage')|| Request::url() ===  route('user.service.facebook.fbfollow')
-                            || Request::url() ===  route('user.service.facebook.fbshare') || Request::url() ===  route('user.service.facebook.fbcomment') ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
+                             ? 'menu-item menu-accordion show' : 'menu-item menu-accordion' }}">
                                 <!--begin:Menu link-->
-                                
+                                {{-- || Request::url() ===  route('user.service.facebook.fblikepost',['id'=>$content->id]) --}}
                                 <span class="menu-link">
                                     <span class="menu-icon">
                                         <i class="side-menu__icon enlarge fa fa-google-wallet fs-2"></i>
@@ -974,12 +973,12 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            {{-- <a class="menu-link" href="{{ route('user.service.facebook.fblikepost') }}"> --}}
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>5]) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
                                                 <span class="menu-title">{{ __('FB LIKE POST') }}</span>
-                                            {{-- </a> --}}
+                                            </a>
                                             <!--end:Menu link-->
                                         </div>
                                         <!--end:Menu item-->      
@@ -994,7 +993,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepage') }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>6]) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1014,7 +1013,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fbfollow') }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>7]) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1034,7 +1033,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fbshare') }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>8]) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1054,7 +1053,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fbcomment') }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>9]) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>

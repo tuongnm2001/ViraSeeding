@@ -371,14 +371,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['verified', 'role:user|admin|
 
         //SERVICE
         Route::get('/service/{id}/show', [ServiceController::class, 'show'])->name('user.service.facebook.fblikepost');
-        Route::get('/service/list', [ServiceController::class, 'listService'])->name('user.service.list');
+        Route::get('/service/list/{id}', [ServiceController::class, 'listOrder'])->name('user.service.list');
+        Route::post('/service/create', [ServiceController::class, 'createService'])->name('user.service.create');
         // Route::get('/users/list', [AdminUserController::class, 'listUsers'])->name('admin.user.list');
         
-        Route::get('/service/facebook/fblikepage', [ServiceController::class, 'index'])->name('user.service.facebook.fblikepage');
-        Route::get('/service/facebook/fbfollow', [ServiceController::class, 'index'])->name('user.service.facebook.fbfollow');
-        Route::get('/service/facebook/fbshare', [ServiceController::class, 'index'])->name('user.service.facebook.fbshare');
-        Route::get('/service/facebook/fbcomment', [ServiceController::class, 'index'])->name('user.service.facebook.fbcomment');
-
 });
 
 

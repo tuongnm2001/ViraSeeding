@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
+use DataTables;
 use App\Models\Plan;
+use App\Models\Order;
 use App\Services\FbService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -31,30 +33,21 @@ class ServiceController extends Controller{
       // $userId = $id;
       $data = Plan::find($planId);
 
-      // echo $data ;
-
       return view('user.service.facebook.likepost.viplike',[
          'content'=>$data
       ]);
-      
    }
 
-   public function listService(Request $request){
-       if ($request->ajax()) {
-            $data = User::latest()->get();
-        }
-
-        return view('user.service.facebook.likepost.viplike');
+   public function listOrder(Request $request, $id ){
+        $id = $request->route('id');
+        
+        // return Datatables::of(Plan::query())->make(true) ; get all data
+        // return Datatables::of(Plan::where('id', $id))->make(true); // get 1 row by id
+        return Datatables::of(Order::where('id', $id))->make(true); // get 1 row by id
    }
 
-    public function index(Request $id){
-      //   $product = $this->fbService->show($id);
-         // dd($product);
-         // dd($id);
-         echo $id;
-         echo '$test';
-      //  return view('layouts.nav-aside',[
-      //       'title'=>$this->fbService->show()
-      //  ]);
-    }
+   public function createService(Request $request){
+      dd($request->input());
+   }
+
 }

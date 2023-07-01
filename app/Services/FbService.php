@@ -24,4 +24,11 @@ class FbService {
         return Plan::select('plan_name','id')->get();
     }
 
+    public function fetchListOrders(){
+        return Order::orderByDesc('id')->paginate(15);
+    }
+
+    // public function createService(){
+    //    echo 'abc';
+    // }
 }
