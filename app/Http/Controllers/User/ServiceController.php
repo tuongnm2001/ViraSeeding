@@ -27,8 +27,7 @@ class ServiceController extends Controller{
 
       // Lấy giá trị của tham số đường dẫn 'id'
       $planId = $request->route('id');
-      //  echo $request->route('id');
-
+      // $url = urldecode($urlEncoded);
       // Hoặc có thể lấy trực tiếp giá trị của biến $id
       // $userId = $id;
       $data = Plan::find($planId);
@@ -42,12 +41,15 @@ class ServiceController extends Controller{
         $id = $request->route('id');
         
         // return Datatables::of(Plan::query())->make(true) ; get all data
-        // return Datatables::of(Plan::where('id', $id))->make(true); // get 1 row by id
-        return Datatables::of(Order::where('id', $id))->make(true); // get 1 row by id
-   }
+        return Datatables::of(Order::where('plan_id', $id))->make(true); // get 1 row by id
+         // $userID = Auth::id();
+         // return Datatables::of(Order::where('user_id', $userID)->where('plan_id', $id))->make(true);   
+}
 
    public function createService(Request $request){
-      dd($request->input());
+      // dd($request->input());
+      $result = $this->fbService->createService($request);
+      return \redirect()->back();
    }
 
 }

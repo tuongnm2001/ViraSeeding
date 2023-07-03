@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Order;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -119,6 +120,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function hasActiveSubscription()
     {
         return optional($this->subscription)->isActive() ?? false;
+    }
+
+    public function user(){
+        return $this->hasMany(Order::class , 'user_id' , 'id');
     }
 
 }

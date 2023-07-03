@@ -26,18 +26,16 @@
 @section('content')
 	<div class="row">
 		<div class="col-lg-9 col-md-6 col-xm-12">
-			<form>
 			<div class="card border-0">
 				<div class="card-header">
 					<h3 class="card-title">{{ $content->plan_name }}</h3>
 				</div>
 				<div class="card-body pt-5">
-					<form action="{{ route('user.service.create') }}">
-						@csrf
+					<form action="{{ route('user.service.create',['id'=>$content->id]) }}" method="POST">
 
 						<div class="row">
                             <!-- HEADING -->
-                            <div class="col-lg-12  col-md-12 col-sm-12">
+                            {{-- <div class="col-lg-12  col-md-12 col-sm-12">
 									<h6>{{ __('URL String') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
 										<input type="text" class="form-control form-control-solid" placeholder="https://www.facebook.com/{uid}" id="urlstring" name="urlstring" value="{{ old('urlstring') }}" required>
@@ -45,7 +43,7 @@
 									@error('urlstring')
 										<p class="text-danger">{{ $errors->first('urlstring') }}</p>
 									@enderror
-							</div>
+							</div> --}}
                             <!-- END HEADING -->
 
 						</div>
@@ -97,6 +95,8 @@
 							<a href="" class="btn btn-cancel mr-2">{{ __('Cancel') }}</a>
 							<button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
 						</div>
+						@csrf
+
 					</form>
 				</div>
 			</div>
@@ -230,7 +230,7 @@
 					{
 						data: 'amount',
 						name: 'amount',
-						orderable: false,
+						orderable: true,
 						searchable: true
 					},
 					{
@@ -243,7 +243,10 @@
 						data: 'result',
 						name: 'result',
 						orderable: true,
-						searchable: true
+						searchable: true,
+						render: function (data, type, full, meta) {
+							return full.amount * full.cost;
+						},
 					},					
 					{
 						data: 'bonus',
