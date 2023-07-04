@@ -35,7 +35,7 @@
 
 						<div class="row">
                             <!-- HEADING -->
-                            {{-- <div class="col-lg-12  col-md-12 col-sm-12">
+                            <div class="col-lg-12  col-md-12 col-sm-12">
 									<h6>{{ __('URL String') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
 										<input type="text" class="form-control form-control-solid" placeholder="https://www.facebook.com/{uid}" id="urlstring" name="urlstring" value="{{ old('urlstring') }}" required>
@@ -43,7 +43,7 @@
 									@error('urlstring')
 										<p class="text-danger">{{ $errors->first('urlstring') }}</p>
 									@enderror
-							</div> --}}
+							</div>
                             <!-- END HEADING -->
 
 						</div>
@@ -70,8 +70,6 @@
 										<p class="text-danger">{{ $errors->first('cost') }}</p>
 									@enderror
 							</div>
-
-
 						</div>
 
 						<div class="row mt-2">
@@ -141,6 +139,7 @@
 								<tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
 									<th width="15%">{{ __('user_id') }}</th>											
 									<th width="15%">{{ __('plan_id') }}</th>
+									<th width="15%">{{ __('uid') }}</th>
 									<th width="7%">{{ __('note') }}</th>																															
 									<th width="10%">{{ __('amount') }}</th>
 									<th width="10%">{{ __('cost') }}</th>
@@ -218,6 +217,12 @@
 					{
 						data: 'plan_id',
 						name: 'plan_id',
+						orderable: true,
+						searchable: true
+					},
+					{
+						data: 'uid',
+						name: 'uid',
 						orderable: true,
 						searchable: true
 					},

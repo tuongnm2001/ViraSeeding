@@ -39,17 +39,17 @@ class FbService {
             $user = Order::create([
                 'user_id'=>$userId,
                 'plan_id'=>$planId,
+                'uid'=>$request->input('urlstring'),
                 'note'=>$request->input('note'),
                 'amount'=>$request->input('amount'),
                 'cost'=>$request->input('cost'),
-                'result'=>$request->input('amount') * $request->input('cost'),
+                'result'=>$request->input('amount') * $request->input('cost')
             ]);
 
             // $this->infoProductCart($user->id);
             // DB::commit();
             $request->session()->flash('success', 'Tạo thành công');
         } catch (\Exception $th) {
-            DB::rollBack();
             $request->session()->flash('error', 'Tạo thất bại');
             return false ;
         }
