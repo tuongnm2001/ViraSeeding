@@ -23,14 +23,14 @@ class ServiceController extends Controller{
      * @return \Illuminate\Http\Response
      */
 
-   public function show(Request $request, $id){
+   public function show($plan_name){
 
       // Lấy giá trị của tham số đường dẫn 'id'
-      $planId = $request->route('id');
+      $data = Plan::where('plan_name', $plan_name)->first();
       // $url = urldecode($urlEncoded);
       // Hoặc có thể lấy trực tiếp giá trị của biến $id
       // $userId = $id;
-      $data = Plan::find($planId);
+      // $data = Plan::find($planId);
 
       return view('user.service.facebook.likepost.viplike',[
          'content'=>$data
@@ -49,7 +49,7 @@ class ServiceController extends Controller{
    public function createService(Request $request){
       // dd($request->input());
       $result = $this->fbService->createService($request);
-      return \redirect()->back();
+      return redirect()->back();
    }
 
 }

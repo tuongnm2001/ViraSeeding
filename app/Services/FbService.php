@@ -36,13 +36,17 @@ class FbService {
             // $planId = Plan::findOrFail($request->plan_id); 
             $planId = $request->route('id');
 
+            // $plan = Plan::where('id', $planId)->first();
+            // $cost = $plan->cost;
+             $cost = base64_decode($request->input('cost'));
+
             $user = Order::create([
                 'user_id'=>$userId,
                 'plan_id'=>$planId,
                 'uid'=>$request->input('urlstring'),
                 'note'=>$request->input('note'),
                 'amount'=>$request->input('amount'),
-                'cost'=>$request->input('cost'),
+                'cost'=>$cost,
                 'result'=>$request->input('amount') * $request->input('cost')
             ]);
 

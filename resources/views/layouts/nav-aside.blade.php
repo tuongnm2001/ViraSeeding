@@ -973,7 +973,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>5,'url'=>'fblikepost']) }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-likepage']) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -993,7 +993,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>6,'url'=>'fblikepage']) }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-likepage']) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1013,7 +1013,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>7,'url'=>'fbfollow']) }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-follow']) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1033,7 +1033,7 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>8,'url'=>'fbshare']) }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-sharegroup']) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1053,11 +1053,231 @@
                                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                         <div class="menu-item ">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['id'=>9,'url'=>'fbcomment']) }}">
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-likecomment']) }}">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
                                                 <span class="menu-title">{{ __('FB COMMENT') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-vipcomment-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-vipcomment']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-vipcomment') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-like-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-like']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-like') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-likecomment-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-likecomment']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-likecomment') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-follow-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-follow']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-follow') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                 <!--begin:Menu sub fb-likepage-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-likepage']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-likepage') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-live-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-live']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-live') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-viewvideo-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-viewvideo']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-viewvideo') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-membergroup-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-membergroup']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-membergroup') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-sharegroup-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-sharegroup']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-sharegroup') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-shareprofile-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-shareprofile']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-shareprofile') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->      
+                                    </div>
+                                    <!--end:Menu item-->
+                                </div>
+                                <!--end:Menu sub-->
+
+                                <!--begin:Menu sub fb-review-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <div class="menu-item ">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="{{ route('user.service.facebook.fblikepost',['plan_name'=>'fb-shareprofile']) }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('fb-review') }}</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>

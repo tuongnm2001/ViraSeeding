@@ -53,7 +53,7 @@
 							
 									<h6>{{ __('Amount') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
-										<input type="text" class="form-control form-control-solid" id="amount" name="amount" value="{{ old('amount') }}" required>
+										<input type="text" class="form-control form-control-solid"  id="amount" name="amount" value="{{ old('amount') }}" required>
 									</div>
 									@error('amount')
 										<p class="text-danger">{{ $errors->first('amount') }}</p>
@@ -64,7 +64,7 @@
 							<div class="col-lg-6 col-md-6col-sm-12">
 									<h6>{{ __('Price') }} <span class="text-muted">({{ __('Required') }})</span></h6>
 									<div class="form-group">
-										<input type="text" class="form-control form-control-solid" id="cost" name="cost" value="{{$content->cost }}" required>
+										<input type="text" class="form-control form-control-solid" readonly id="cost" name="cost" value="{{$content->cost }}" required>
 									</div>
 									@error('cost')
 										<p class="text-danger">{{ $errors->first('cost') }}</p>
@@ -293,5 +293,8 @@
 			});
 
 		});
+
+		document.getElementById('cost').setAttribute('data-cost', btoa(document.getElementById('cost').value));
+
 	</script>
 @endsection
