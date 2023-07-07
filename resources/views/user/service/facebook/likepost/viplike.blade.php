@@ -11,7 +11,7 @@
 	<!-- PAGE HEADER -->
 	<div class="page-header mt-5-7">
 		<div class="page-leftheader">
-			<h4 class="page-title mb-0">{{ $content->plan_name }}</h4>
+			<h4 class="page-title mb-0">{{ $content->primary_heading }}</h4>
 			<ol class="breadcrumb mb-2">
 				<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-google-wallet mr-2 fs-12"></i>{{ __('Admin') }}</a></li>
 				<li class="breadcrumb-item" aria-current="page"><a href="{{ route('admin.finance.dashboard') }}"> {{ __('Finance Management') }}</a></li>
@@ -28,7 +28,7 @@
 		<div class="col-lg-9 col-md-6 col-xm-12">
 			<div class="card border-0">
 				<div class="card-header">
-					<h3 class="card-title">{{ $content->plan_name }}</h3>
+					<h3 class="card-title">{{ __('TẠO ĐƠN') }}</h3>
 				</div>
 				<div class="card-body pt-5">
 					<form action="{{ route('user.service.create',['id'=>$content->id]) }}" method="POST">
@@ -103,7 +103,7 @@
         <div class="col-lg-3 col-md-6 col-xm-12">
 			<div class="card border-0">
 				<div class="card-header">
-					<h3 class="card-title">{{ $content->plan_name }}</h3>
+					<h3 class="card-title">{{ __('CHÚ Ý') }}</h3>
 				</div>
 				<div class="card-body pt-5">
 					<form action="{{ route('admin.finance.prepaid.store') }}" method="POST" enctype="multipart/form-data">
@@ -114,7 +114,9 @@
                             <div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="input-box">
 									<h6>{{ __('URL String') }} <span class="text-muted">({{ __('Required') }})</span></h6>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content. Disabled checkboxes and radios are supported, but to provide a not-allowed cursor on hover of the parent <label>, you’ll need to add the disabled attribute to the .form-check-input. The disabled attribute will apply a lighter color to help indicate the input’s state.</p>
+                                    <p class="card-text">
+										{{ $content->plan_features }}
+									</p>
 									@error('urlstring')
 										<p class="text-danger">{{ $errors->first('urlstring') }}</p>
 									@enderror
@@ -195,7 +197,7 @@
 				colReorder: true,
 				"order": [[ 0, "desc" ]],
 				language: {
-					search: "<i class='fa fa-search search-icon'></i>",
+					search: "<i class='fa fa-search search-icon mt-4'></i>",
 					lengthMenu: '_MENU_ ',
 					paginate : {
 						first    : '<i class="fa fa-angle-double-left"></i>',
@@ -249,9 +251,6 @@
 						name: 'result',
 						orderable: true,
 						searchable: true,
-						render: function (data, type, full, meta) {
-							return full.amount * full.cost;
-						},
 					},					
 					{
 						data: 'bonus',
@@ -294,7 +293,18 @@
 
 		});
 
-		document.getElementById('cost').setAttribute('data-cost', btoa(document.getElementById('cost').value));
+		// document.getElementById('cost').setAttribute('data-cost', btoa(document.getElementById('cost').value));
+
+		// document.oncontextmenu = () =>{
+		// 	return false ;
+		// }
+
+		document.onkeydown = e =>{
+			if(e.key == "F12"){
+				alert('aw')
+				return false ;
+			}
+		}
 
 	</script>
 @endsection

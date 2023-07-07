@@ -30,35 +30,35 @@ class FbService {
     //     return Order::orderByDesc('id')->paginate(15);
     // }
 
-    public function createService($request){
-        try {
-            $userId = Auth::id(); // get id user 
-            // $planId = Plan::findOrFail($request->plan_id); 
-            $planId = $request->route('id');
+    // public function createService($request){
+    //     try {
+    //         $userId = Auth::id(); // get id user 
+    //         // $planId = Plan::findOrFail($request->plan_id); 
+    //         $planId = $request->route('id');
 
-            // $plan = Plan::where('id', $planId)->first();
-            // $cost = $plan->cost;
-             $cost = base64_decode($request->input('cost'));
+    //         $plan = Plan::where('id', $planId)->first();
+    //         $cost = $plan->cost;
+    //         //  $cost = base64_decode($request->input('cost'));
 
-            $user = Order::create([
-                'user_id'=>$userId,
-                'plan_id'=>$planId,
-                'uid'=>$request->input('urlstring'),
-                'note'=>$request->input('note'),
-                'amount'=>$request->input('amount'),
-                'cost'=>$cost,
-                'result'=>$request->input('amount') * $request->input('cost')
-            ]);
+    //         $user = Order::create([
+    //             'user_id'=>$userId,
+    //             'plan_id'=>$planId,
+    //             'uid'=>$request->input('urlstring'),
+    //             'note'=>$request->input('note'),
+    //             'amount'=>$request->input('amount'),
+    //             'cost'=>$cost,
+    //             'result'=>$request->input('amount') * $request->input('cost')
+    //         ]);
 
-            // $this->infoProductCart($user->id);
-            // DB::commit();
-            $request->session()->flash('success', 'Tạo thành công');
-        } catch (\Exception $th) {
-            $request->session()->flash('error', 'Tạo thất bại');
-            return false ;
-        }
-        return true ;
-    }
+    //         // $this->infoProductCart($user->id);
+    //         // DB::commit();
+    //         $request->session()->flash('success', 'Tạo thành công');
+    //     } catch (\Exception $th) {
+    //         $request->session()->flash('error', 'Tạo thất bại');
+    //         return false ;
+    //     }
+    //     return true ;
+    // }
 
     // protected function infoProductCart($user_id){
 

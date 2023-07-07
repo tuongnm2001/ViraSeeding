@@ -12,7 +12,7 @@ use App\Http\Controllers\User\SearchController;
 use App\Http\Controllers\Admin\UpdateController;
 use App\Http\Controllers\User\BalanceController;
 use App\Http\Controllers\User\PaymentController;
-use App\Http\Controllers\User\ServiceController;
+use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\InstallController;
 use App\Http\Controllers\Admin\SupportController;
@@ -370,10 +370,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['verified', 'role:user|admin|
         Route::any('/search', [SearchController::class, 'index'])->name('search');
 
         //SERVICE
-        Route::get('/service/{plan_name}', [ServiceController::class, 'show'])->name('user.service.facebook.fblikepost');
-        // Route::get('/service/{id}', [ServiceController::class, 'show'])->name('user.service.facebook.fblikepost');
-        Route::get('/service/list/{id}', [ServiceController::class, 'listOrder'])->name('user.service.list');
-        Route::post('/service/{id}/show', [ServiceController::class, 'createService'])->name('user.service.create');
+        Route::get('/service/{plan_name}', [OrderController::class, 'show'])->name('user.service.facebook.fblikepost');
+        // Route::get('/service/{id}', [OrderController::class, 'show'])->name('user.service.facebook.fblikepost');
+        Route::get('/service/list/{id}', [OrderController::class, 'listOrder'])->name('user.service.list');
+        Route::post('/service/{id}/show', [OrderController::class, 'orderService'])->name('user.service.create');
         // Route::get('/users/list', [AdminUserController::class, 'listUsers'])->name('admin.user.list');
         
 });
